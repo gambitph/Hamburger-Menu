@@ -1,0 +1,73 @@
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+
+$barThickness: 4px;
+$size: 30px;
+$padding: 20px;
+$barColor: #000;
+$backgroundColor: #fff;
+.hamburger-button-container {
+  border: 4px solid #000;
+  width: $size;
+  height: $size;
+  padding: $padding;
+  background: $backgroundColor;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  display: block;
+  .hamburger-button-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: $barThickness;
+    margin: 0 auto;
+    width: $size;
+    background: $barColor;
+    @include transition(all .2s ease-in-out .2s);
+    @include transform(translateX(-50%) translateY(-50%));
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $barColor;
+      @include transition(top .2s ease-in-out .2s, bottom .2s ease-in-out .2s, transform .2s ease-in-out 0s);
+    }
+    &:before {
+      top: -250%;
+    }
+    &:after {
+      bottom: -250%;
+    }
+  }
+}
+
+.hamburger-button-container:not(.close):hover {
+  .hamburger-button-icon {
+    &:before {
+      @include transform(translateX(10%));
+    }
+    &:after {
+      @include transform(translateX(-5%));
+    }
+  }
+}
+
+.hamburger-button-container.close {
+  .hamburger-button-icon {
+    background: transparent;
+    &:before, &:after { 
+      @include transition(top .2s ease-in-out, bottom .2s ease-in-out, transform .2s ease-in-out .2s);
+    }
+    &:before {
+      top: 0;
+      @include transform(rotate(45deg));
+    }
+    &:after {
+      bottom: 0;
+      @include transform(rotate(-45deg));
+    }
+  }
+}

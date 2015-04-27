@@ -1,0 +1,75 @@
+.hamburger-button-container {
+  border: 4px solid #000;
+  width: 30px;
+  height: 30px;
+  padding: 20px;
+  background: #fff;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  display: block; }
+  .hamburger-button-container .hamburger-button-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 4px;
+    margin: 0 auto;
+    width: 30px;
+    background: #000;
+    -moz-transition: all 0.2s ease-in-out 0.2s;
+    -o-transition: all 0.2s ease-in-out 0.2s;
+    -webkit-transition: all 0.2s ease-in-out;
+    -webkit-transition-delay: 0.2s;
+    transition: all 0.2s ease-in-out 0.2s;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%); }
+    .hamburger-button-container .hamburger-button-icon:before, .hamburger-button-container .hamburger-button-icon:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      -moz-transition: top 0.2s ease-in-out 0.2s, bottom 0.2s ease-in-out 0.2s, -moz-transform 0.2s ease-in-out 0s;
+      -o-transition: top 0.2s ease-in-out 0.2s, bottom 0.2s ease-in-out 0.2s, -o-transform 0.2s ease-in-out 0s;
+      -webkit-transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+      -webkit-transition-delay: 0.2s, 0.2s, 0s;
+      transition: top 0.2s ease-in-out 0.2s, bottom 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out 0s; }
+    .hamburger-button-container .hamburger-button-icon:before {
+      top: -250%; }
+    .hamburger-button-container .hamburger-button-icon:after {
+      bottom: -250%; }
+
+.hamburger-button-container:not(.close):hover .hamburger-button-icon:before {
+  -moz-transform: translateX(10%);
+  -ms-transform: translateX(10%);
+  -webkit-transform: translateX(10%);
+  transform: translateX(10%); }
+.hamburger-button-container:not(.close):hover .hamburger-button-icon:after {
+  -moz-transform: translateX(-5%);
+  -ms-transform: translateX(-5%);
+  -webkit-transform: translateX(-5%);
+  transform: translateX(-5%); }
+
+.hamburger-button-container.close .hamburger-button-icon {
+  background: transparent; }
+  .hamburger-button-container.close .hamburger-button-icon:before, .hamburger-button-container.close .hamburger-button-icon:after {
+    -moz-transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, -moz-transform 0.2s ease-in-out 0.2s;
+    -o-transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, -o-transform 0.2s ease-in-out 0.2s;
+    -webkit-transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+    -webkit-transition-delay: 0s, 0s, 0.2s;
+    transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s; }
+  .hamburger-button-container.close .hamburger-button-icon:before {
+    top: 0;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .hamburger-button-container.close .hamburger-button-icon:after {
+    bottom: 0;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
