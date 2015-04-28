@@ -42,10 +42,6 @@ $titan = TitanFramework::getInstance( 'hamburger_menu' );
 			
 			<?php do_action( 'hamburger_social_links' ) ?>
 			
-			<!-- <div id="hamburger-social-container">
-				<a href='http://twitter.com/'><span class="genericon genericon-twitter"></span></a>
-			</div> -->
-			
 		</div>
 	</div>
 	

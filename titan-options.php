@@ -147,7 +147,7 @@ function hamburger_create_options() {
 		'name' => __( 'Background Color', 'hamburger' ),
 		'id' => 'icon_bg_color',
 		'type' => 'color',
-		'default' => '#ffffff',
+		'default' => '',
 		'css' => '.hamburger-button-container { background-color: value; }',
 	) );
 	
@@ -224,11 +224,11 @@ function hamburger_create_options() {
 		'name' => __( 'Overlay Opacity', 'hamburger' ),
 		'id' => 'overlay_opacity',
 		'type' => 'number',
-		'default' => '0.4',
+		'default' => '0.3',
 		'min' => '0.0',
 		'max' => '1.0',
 		'step' => '0.01',
-		'css' => 'body.hamburger_open #hamburger-overlay { opacity: value; }',
+		'css' => '.hamburger_open #hamburger-overlay { opacity: value; }',
 	) );
 
 	

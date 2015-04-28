@@ -10,8 +10,8 @@
 	background: #000;
 	cursor: pointer;
 }
-body.hamburger_open #hamburger-overlay {
-	width: 100vw;
-	height: 100vh;
+.hamburger_open #hamburger-overlay {
+	width: 100%;
+	height: 100%;
 	opacity: 1;
 }

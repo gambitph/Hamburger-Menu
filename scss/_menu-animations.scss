@@ -1,21 +1,26 @@
 #hamburger-menu-container {
-	@include transition(all .4s);
-	@include transform(translateX(-100%));
+	@include transition(transform .6s ease-in-out);
+	@include transform(translateX(-350px));
 	opacity: 1 !important;
 }
 #hamburger-menu-container.open {
-	@include transform(translateX(-100px));
+	@include transform(translateX(0px));
 }
 #hamburger-button {
-	@include transition(all .4s);
+	@include transition(transform .6s ease-in-out);
 }
 #hamburger-button.close {
-	background: transparent;
-	left: 360px;
+	@include transform(translateX(350px));
+//	left: calc(350px - 100px);
 }
-body {
-	@include transition(all .4s);
+#hamburger-content-wrapper {
+	@include transition(transform .6s ease-in-out);
+	@include transform(translateX(0));
 }
-body.hamburger_open {
+html.hamburger_open #hamburger-content-wrapper {
 	@include transform(translateX(100px));
+//	left: 100px;
+}
+html.hamburger_open {
+	overflow-x: hidden;
 }
