@@ -7,7 +7,9 @@ $padding: 20px;
 $barColor: #000;
 $backgroundColor: #fff;
 .hamburger-button-container {
-  border: 4px solid #000;
+  border-width: 0px;
+  border-style: solid;
+  border-color: #333;
   width: $size;
   height: $size;
   padding: $padding;

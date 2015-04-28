@@ -74,6 +74,7 @@ function hamburger_create_options() {
 	) );
 	
 
+
 	
 	$section = $titan->createThemeCustomizerSection( array(
 		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
@@ -116,8 +117,87 @@ function hamburger_create_options() {
 	    'name' => __( 'Icon Colors', 'hamburgermenu' ),
 	) );
 	
-	// TODO
+	$section->createOption( array(
+		'name' => __( 'Hamburger Bar Thickness', 'hamburger' ),
+		'id' => 'icon_bar_thickness',
+		'type' => 'number',
+		'default' => '4',
+		'min' => '0',
+		'max' => '10',
+		'step' => '1',
+		'css' => '.hamburger-button-container .hamburger-button-icon { height: valuepx; }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Hamburger Bar Color', 'hamburger' ),
+		'id' => 'icon_bar_color',
+		'type' => 'color',
+		'default' => '#333333',
+		'css' => '.hamburger-button-container { .hamburger-button-icon { &, &:before, &:after { background-color: value; } } }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Hamburger Icon Size', 'hamburger' ),
+		'id' => 'icon_size',
+		'type' => 'number',
+		'default' => '30',
+		'min' => '10',
+		'max' => '100',
+		'step' => '1',
+		'css' => '.hamburger-button-container { width: valuepx; height: valuepx; .hamburger-button-icon { width: valuepx; } }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Hamburger Icon Padding', 'hamburger' ),
+		'id' => 'icon_padding',
+		'type' => 'number',
+		'default' => '20',
+		'min' => '0',
+		'max' => '100',
+		'step' => '1',
+		'css' => '.hamburger-button-container { padding: valuepx; }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Background Color', 'hamburger' ),
+		'id' => 'icon_bg_color',
+		'type' => 'color',
+		'default' => '#ffffff',
+		'css' => '.hamburger-button-container { background-color: value; }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Border Thickness', 'hamburger' ),
+		'id' => 'icon_border_thickness',
+		'type' => 'number',
+		'default' => '4',
+		'min' => '0',
+		'max' => '10',
+		'step' => '1',
+		'css' => '.hamburger-button-container { border-width: valuepx; }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Border Color', 'hamburger' ),
+		'id' => 'icon_border_color',
+		'type' => 'color',
+		'default' => '#333333',
+		'css' => '.hamburger-button-container { border-color: value; }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Hamburger Icon Opacity', 'hamburger' ),
+		'id' => 'icon_opacity',
+		'type' => 'number',
+		'default' => '1',
+		'min' => '0.0',
+		'max' => '1.0',
+		'step' => '0.01',
+		'css' => '.hamburger-button-container { opacity: value; }',
+	) );
 
+	
+	
 	
 	$section = $titan->createThemeCustomizerSection( array(
 		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),

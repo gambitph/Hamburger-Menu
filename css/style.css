@@ -1,5 +1,7 @@
 .hamburger-button-container {
-  border: 4px solid #000;
+  border-width: 0px;
+  border-style: solid;
+  border-color: #333;
   width: 30px;
   height: 30px;
   padding: 20px;
