@@ -7,7 +7,8 @@
   top: 0px;
   left: 0px;
   position: absolute;
-  display: block; }
+  display: block;
+  outline: none; }
   .hamburger-button-container .hamburger-button-icon {
     position: absolute;
     top: 50%;

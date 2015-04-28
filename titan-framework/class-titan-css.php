@@ -240,7 +240,7 @@ class TitanFrameworkCSS {
 
 			// Don't render CSS for this option if it doesn't have a value
 			$optionValue = $this->frameworkInstance->getOption( $option->settings['id'] );
-			if ( empty( $optionValue ) ) {
+			if ( $optionValue == '' || $optionValue === false ) {
 				continue;
 			}
 
@@ -284,7 +284,6 @@ class TitanFrameworkCSS {
 			try {
 				$cssString = $scss->compile( $cssString );
 			} catch ( Exception $e ) {
-				var_dump($e);
 			}
 		}
 

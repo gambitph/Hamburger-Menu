@@ -20,6 +20,22 @@ function hamburger_create_options() {
 	$section = $titan->createThemeCustomizerSection( array(
 		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
 	    'name' => __( 'General', 'hamburgermenu' ),
+		'panel_desc' => '',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'The Type of Menu to Display', 'hamburger' ),
+		'id' => 'menu_type',
+		'type' => 'select',
+		'desc' => __( 'Choose your menu flavor:<br>Basic - Plain menu<br>Basic Fixed - Basic & fixed on the side<br>Designed (PRO) - With descriptions & icons<br>Designed Fixed (PRO) - Designed & fixed on the side<br>Full Screen (PRO) - A full screen basic menu', 'hamburger' ),
+		'options' => array(
+			'basic' => __( 'Basic', 'hamburger' ),
+			'basic-fixed' => __( 'Basic Fixed', 'hamburger' ),
+			'!designed' => __( 'Designed (PRO)', 'hamburger' ),
+			'!designed-fixed' => __( 'Designed Fixed (PRO)', 'hamburger' ),
+			'!fullscreen' => __( 'Full Screen (PRO)', 'hamburger' ),
+		),
+		'default' => 'basic',
 	) );
 	
 	$options = array( '' => '- Select -' );
@@ -54,8 +70,7 @@ function hamburger_create_options() {
 		'id' => 'hide_selectors',
 		'type' => 'text',
 		'desc' => __( 'Sometimes, the above setting for hiding menus won\'t be enough and you might still see a menu button that should be hidden. If that is the case, inspect your website and put the css selectors of the elements to hide here.', 'hamburger' ),
-		'default' => '',
-		'placeholder' => 'Example: .class, #id',
+		'default' => 'header .secondary-toggle',
 	) );
 	
 
@@ -69,7 +84,7 @@ function hamburger_create_options() {
 		'name' => __( 'Icon Top Offset', 'hamburger' ),
 		'id' => 'icon_top',
 		'type' => 'number',
-		'desc' => __( 'In pixels', 'hamburger' ),
+		'desc' => __( 'The vertical offset of the location of the icon from the top of the site, in pixels', 'hamburger' ),
 		'default' => '30',
 		'min' => '0',
 		'max' => '300',
@@ -80,7 +95,7 @@ function hamburger_create_options() {
 		'name' => __( 'Icon Left Offset', 'hamburger' ),
 		'id' => 'icon_left',
 		'type' => 'number',
-		'desc' => __( 'In pixels', 'hamburger' ),
+		'desc' => __( 'The horizontal offset of the location of the icon from the left of the site, in pixels', 'hamburger' ),
 		'default' => '30',
 		'min' => '0',
 		'max' => '300',
@@ -93,5 +108,39 @@ function hamburger_create_options() {
 			left: #{$icon_left}px;
 		}
 	' );
+	
+
+	
+	$section = $titan->createThemeCustomizerSection( array(
+		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
+	    'name' => __( 'Icon Colors', 'hamburgermenu' ),
+	) );
+	
+	// TODO
+
+	
+	$section = $titan->createThemeCustomizerSection( array(
+		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
+	    'name' => __( 'Logo', 'hamburgermenu' ),
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Top Logo', 'hamburger' ),
+		'id' => 'logo_image',
+		'type' => 'upload',
+		'desc' => __( 'Select a logo here if you want to display a logo on the top part of your menu.', 'hamburger' ),
+		'default' => '',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Logo Width', 'hamburger' ),
+		'id' => 'logo_width',
+		'type' => 'number',
+		'desc' => __( 'Your logo will be resized to this width in pixels.', 'hamburger' ),
+		'default' => '150',
+		'min' => '0',
+		'max' => '350',
+		'step' => '1',
+	) );
 	
 }
