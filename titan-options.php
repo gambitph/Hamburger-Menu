@@ -209,6 +209,7 @@ function hamburger_create_options() {
 		'id' => 'menu_bg_color',
 		'type' => 'color',
 		'default' => '#34495E',
+		'css' => '#hamburger-menu-container { background: value; }',
 	) );
 
 	
