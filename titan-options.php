@@ -201,7 +201,22 @@ function hamburger_create_options() {
 	
 	$section = $titan->createThemeCustomizerSection( array(
 		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Logo', 'hamburgermenu' ),
+	    'name' => __( 'Menu Colors', 'hamburgermenu' ),
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Background Color', 'hamburger' ),
+		'id' => 'menu_bg_color',
+		'type' => 'color',
+		'default' => '#34495E',
+	) );
+
+	
+	
+	
+	$section = $titan->createThemeCustomizerSection( array(
+		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
+	    'name' => __( 'Menu Logo', 'hamburgermenu' ),
 	) );
 	
 	$section->createOption( array(

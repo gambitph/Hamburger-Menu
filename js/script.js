@@ -1,4 +1,6 @@
+// @codekit-prepend "_images-loaded.js"
 // @codekit-prepend "_icon.js"
+// @codekit-prepend "_menu.js"
 
 jQuery(document).ready(function($) {
 	

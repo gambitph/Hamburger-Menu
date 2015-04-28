@@ -76,3 +76,67 @@
     -ms-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
+
+body {
+  position: relative !important; }
+
+#hamburger-menu-container {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #34495E;
+  color: #fff;
+  width: 100%;
+  max-width: 350px;
+  overflow: hidden; }
+  #hamburger-menu-container #hamburger-menu-wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    box-sizing: content-box;
+    padding-right: 30px; }
+    #hamburger-menu-container #hamburger-menu-wrapper > * {
+      box-sizing: border-box; }
+  #hamburger-menu-container #hamburger-menu > ul, #hamburger-menu-container #hamburger-menu > ul > li {
+    margin: 0 !important; }
+  #hamburger-menu-container #hamburger-menu-wrapper > * {
+    width: 350px;
+    padding: 15px 0; }
+    #hamburger-menu-container #hamburger-menu-wrapper > *:first-child {
+      padding-top: 30px; }
+    #hamburger-menu-container #hamburger-menu-wrapper > *:last-child {
+      padding-bottom: 30px; }
+  #hamburger-menu-container #hamburger-logo-container img {
+    margin-left: 50%;
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  #hamburger-menu-container #hamburger-social-container {
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center; }
+  #hamburger-menu-container #hamburger-widget-container > * {
+    margin: 0 !important;
+    padding: 15px 30px; }
+    #hamburger-menu-container #hamburger-widget-container > *:first-child {
+      padding-top: 0; }
+    #hamburger-menu-container #hamburger-widget-container > *:last-child {
+      padding-bottom: 0; }
+  #hamburger-menu-container #hamburger-widget-container input, #hamburger-menu-container #hamburger-widget-container textarea, #hamburger-menu-container #hamburger-widget-container iframe, #hamburger-menu-container #hamburger-widget-container embed {
+    max-width: 100%; }
+  #hamburger-menu-container #hamburger-widget-container img {
+    max-width: 100%;
+    height: auto; }
+  #hamburger-menu-container .hamburger-menu {
+    padding-left: 0; }
+    #hamburger-menu-container .hamburger-menu li {
+      padding: 15px 30px;
+      border-top: 1px solid #2C3E50;
+      color: #D2527F; }
+      #hamburger-menu-container .hamburger-menu li:last-child {
+        border-bottom: 1px solid #2C3E50; }

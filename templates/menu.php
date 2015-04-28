@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 $titan = TitanFramework::getInstance( 'hamburger_menu' );
 
 ?>
-<script type="text/html" id="tmpl-hamburger-menu-basic">
+<script type="text/html" id="tmpl-hamburger-menu">
 
 	<div id="hamburger-menu-container">
 		<div id="hamburger-menu-wrapper">
@@ -14,14 +14,14 @@ $titan = TitanFramework::getInstance( 'hamburger_menu' );
 			// Logo
 			if ( $titan->getOption( 'logo_image' ) ):
 				$imageAttachment = wp_get_attachment_image_src( $titan->getOption( 'logo_image' ), 'full' );
-				$imageSrc = '';
+				$width = $titan->getOption( 'logo_width' ) ? $titan->getOption( 'logo_width' ) : 150;
 				if ( $imageAttachment ) {
-					$imageSrc = $imageAttachment[0]; 
+					$imageSrc = $imageAttachment[0];
 				}
 				?>
 				<div id="hamburger-logo-container">
 					<a href='<?php echo esc_url( home_url() ) ?>'>
-						<img class="logo" width="<?php echo esc_attr( $titan->getOption( 'logo_width' ) ? $titan->getOption( 'logo_width' ) : "150" ) ?>" src="<?php echo esc_url( $imageSrc ) ?>"/>
+						<img class="logo" width="<?php echo esc_attr( $width ) ?>" src="<?php echo esc_url( $imageSrc ) ?>"/>
 					</a>
 				</div>
 			<?php
@@ -31,9 +31,6 @@ $titan = TitanFramework::getInstance( 'hamburger_menu' );
 			<?php wp_nav_menu( array( 'theme_location' => 'hamburger', 'container_id' => 'hamburger-menu', 'container_class' => 'hamburger-menu' ) ) ?>
 			
 			<div id="hamburger-widget-container">
-				<div class="widget">
-				dks jadn kjsandk jsnakdjn sdnaskjd aksjnd kjsnadjkqb dwkjhbdjh bsahjdb hjsab dhj bashj bdja
-				</div>
 				<div class="widget">
 				dks jadn kjsandk jsnakdjn sdnaskjd aksjnd kjsnadjkqb dwkjhbdjh bsahjdb hjsab dhj bashj bdja
 				</div>

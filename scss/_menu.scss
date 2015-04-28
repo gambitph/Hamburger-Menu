@@ -1,0 +1,83 @@
+$menuWidth: 350px;
+body {
+	position: relative !important;
+}
+#hamburger-menu-container {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #34495E;
+  color: #fff;
+  width: 100%;
+  max-width: $menuWidth;
+  overflow: hidden;
+  #hamburger-menu-wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    box-sizing: content-box;
+    padding-right: 30px;
+	> * {
+		box-sizing: border-box;
+	}
+  }
+  #hamburger-menu {
+	  > ul, > ul > li {
+		  margin: 0 !important;
+	  }
+  }
+  #hamburger-menu-wrapper > * {
+    width: $menuWidth;
+    padding: 15px 0;
+//	margin: 0 !important;
+    &:first-child {
+      padding-top: 30px;
+    }
+    &:last-child {
+      padding-bottom: 30px;
+    }
+  }
+  #hamburger-logo-container img {
+    margin-left: 50%;
+    @include transform(translateX(-50%));
+  }
+  #hamburger-social-container {
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+  }
+  #hamburger-widget-container {
+    > * {
+		margin: 0 !important;
+      padding: 15px 30px;
+      &:first-child {
+        padding-top: 0;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+    input, textarea, iframe, embed {
+      max-width: 100%;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .hamburger-menu {
+    padding-left: 0;
+    li {
+      padding: 15px 30px;
+      border-top: 1px solid #2C3E50 ;
+      color: #D2527F;
+      &:last-child {
+        border-bottom: 1px solid #2C3E50 ;
+      }
+    }
+  }
+}

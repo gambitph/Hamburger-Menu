@@ -97,7 +97,7 @@ class GambitHamburgerMenu {
 	
 	public function includeTemplates() {
 		include_once( HAMBURGER_PATH . 'templates/icon.php' );
-		include_once( HAMBURGER_PATH . 'templates/menu-basic.php' );
+		include_once( HAMBURGER_PATH . 'templates/menu.php' );
 	}
 	
 	public function includeCustomizerTemplate() {
