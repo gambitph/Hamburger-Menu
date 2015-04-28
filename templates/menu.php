@@ -26,11 +26,8 @@ $titan = TitanFramework::getInstance( 'hamburger_menu' );
 				</div>
 			<?php
 			endif;
-			?>
 			
-			<?php wp_nav_menu( array( 'theme_location' => 'hamburger', 'container_id' => 'hamburger-menu', 'container_class' => 'hamburger-menu' ) ) ?>
 			
-			<?php
 			if ( is_active_sidebar( 'hamburger-top-widgets' ) ) :
 				?>
 				<div id="hamburger-widget-container">
@@ -38,10 +35,23 @@ $titan = TitanFramework::getInstance( 'hamburger_menu' );
 				</div>
 				<?php
 			endif;
+			
+			
+			wp_nav_menu( array( 'theme_location' => 'hamburger', 'container_id' => 'hamburger-menu', 'container_class' => 'hamburger-menu' ) );
+			
+			
+			if ( is_active_sidebar( 'hamburger-bottom-widgets' ) ) :
+				?>
+				<div id="hamburger-widget-container">
+					<?php dynamic_sidebar( 'hamburger-bottom-widgets' ) ?>
+				</div>
+				<?php
+			endif;
+			
+			
+			do_action( 'hamburger_social_links' );
+			
 			?>
-			
-			<?php do_action( 'hamburger_social_links' ) ?>
-			
 		</div>
 	</div>
 	

@@ -298,6 +298,16 @@ body.admin-bar .hamburger-button-container {
   margin-top: 32px; }
 
 /**
+ * When in the customizer, when the menu is open, when reloading stop the animations so 
+ * we can preview changes fast
+ */
+html.hamburger-stop-animation #hamburger-menu-container, html.hamburger-stop-animation #hamburger-button, html.hamburger-stop-animation #hamburger-content-wrapper {
+  -moz-transition: -moz-transform 0s ease-in-out;
+  -o-transition: -o-transform 0s ease-in-out;
+  -webkit-transition: -webkit-transform 0s ease-in-out;
+  transition: transform 0s ease-in-out; }
+
+/**
  * Only apply these fixes if the current theme is twenty-fifteen
  */
 html.hamburger-left.hamburger_fixed body.hamburger-twenty-fifteen:before {

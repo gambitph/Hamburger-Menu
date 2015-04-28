@@ -103,6 +103,7 @@ class GambitHamburgerMenu {
 			'is_fixed' => $titan->getOption( 'menu_type' ) ? ( stripos( $titan->getOption( 'menu_type' ), '-fixed' ) !== false ? true : false ) : false,
 			'menu_slide_type' => $titan->getOption( 'menu_slide_type' ),
 			'menu_location' => $titan->getOption( 'menu_location' ),
+			'is_customize_preview' => is_customize_preview(),
 		) );
 	}
 	
@@ -119,7 +120,16 @@ class GambitHamburgerMenu {
 		register_sidebar( array(
 			'name' => __( 'Hamburger Menu Top Widgets', 'hamburgermenu' ),
 			'id' => 'hamburger-top-widgets',
-			'description' => __( 'Widgets here appear in the hamburger menu.', 'hamburgermenu' ),
+			'description' => __( 'Widgets here appear in the top area of the hamburger menu.', 'hamburgermenu' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
+		) );
+		register_sidebar( array(
+			'name' => __( 'Hamburger Menu Bottom Widgets', 'hamburgermenu' ),
+			'id' => 'hamburger-bottom-widgets',
+			'description' => __( 'Widgets here appear in the bottom area of the hamburger menu.', 'hamburgermenu' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h4 class="widget-title">',

@@ -1,0 +1,9 @@
+/**
+ * When in the customizer, when the menu is open, when reloading stop the animations so 
+ * we can preview changes fast
+ */
+html.hamburger-stop-animation {
+	#hamburger-menu-container, #hamburger-button, #hamburger-content-wrapper {
+		@include transition(transform 0s ease-in-out);
+	}
+}
