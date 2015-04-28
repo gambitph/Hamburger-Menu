@@ -92,6 +92,8 @@ class GambitHamburgerMenu {
 			'menu_hide_class' => $this->menuClassToHide,
 			'show_below_width' => $titan->getOption( 'show_below_width' ),
 			'hide_selectors' => $titan->getOption( 'hide_selectors' ),
+			'is_fixed' => $titan->getOption( 'menu_type' ) ? ( stripos( $titan->getOption( 'menu_type' ), '-fixed' ) !== false ? true : false ) : false,
+			'menu_slide_type' => $titan->getOption( 'menu_slide_type' ),
 		) );
 	}
 	

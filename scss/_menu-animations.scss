@@ -1,7 +1,7 @@
+// Animation required styles
 #hamburger-menu-container {
 	@include transition(transform .6s ease-in-out);
 	@include transform(translateX(-350px));
-	opacity: 1 !important;
 }
 #hamburger-menu-container.open {
 	@include transform(translateX(0px));
@@ -11,16 +11,57 @@
 }
 #hamburger-button.close {
 	@include transform(translateX(350px));
-//	left: calc(350px - 100px);
 }
 #hamburger-content-wrapper {
 	@include transition(transform .6s ease-in-out);
 	@include transform(translateX(0));
 }
-html.hamburger_open #hamburger-content-wrapper {
-	@include transform(translateX(100px));
-//	left: 100px;
+html.hamburger_open {
+	body:before, body:after, #hamburger-content-wrapper {
+		@include transform(translateX(100px));
+	}
 }
+
+// Other animations
+html.slide-fixed {
+	&.hamburger_open {
+		body:before, body:after, #hamburger-content-wrapper {
+			@include transform(translateX(0));
+		}
+	}
+}
+html.slide-move-whole {
+	&.hamburger_open {
+		body:before, body:after, #hamburger-content-wrapper {
+			@include transform(translateX(350px));
+		}
+	}
+}
+
+
+
+/**
+ * Animation required styles
+ */
 html.hamburger_open {
 	overflow-x: hidden;
+}
+body:before, body:after {
+	@include transition(transform .6s ease-in-out);
+}
+
+
+/**
+ * Fixed menu required styles
+ */
+html.hamburger_fixed {
+	#hamburger-content-wrapper {
+		margin-left: 350px;
+	}
+	#hamburger-menu-container {
+		@include transform(translateX(0));
+	}
+	#hamburger-button {
+		display: none !important;
+	}
 }

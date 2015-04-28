@@ -1,6 +1,5 @@
 jQuery(document).ready(function($) {
 
-
 	$('body').append( wp.template( 'hamburger-button' ) );
 	
 	

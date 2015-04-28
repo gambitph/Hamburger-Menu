@@ -203,6 +203,40 @@ function hamburger_create_options() {
 		),
 		'default' => 'basic',
 	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Menu Slide-In Type', 'hamburger' ),
+		'id' => 'menu_slide_type',
+		'type' => 'select',
+		'options' => array(
+			'move-whole' => __( 'Move Whole Page', 'hamburger' ),
+			'move-partial' => __( 'Move Page Partially', 'hamburger' ),
+			'fixed' => __( 'Page is Fixed', 'hamburger' ),
+		),
+		'default' => 'fixed',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Menu Open Method', 'hamburger' ),
+		'id' => 'menu_open_method',
+		'type' => 'select',
+		'options' => array(
+			'click' => __( 'Open on Click', 'hamburger' ),
+			'!hover' => __( 'Open on Hover (PRO)', 'hamburger' ),
+		),
+		'default' => 'click',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Menu Location', 'hamburger' ),
+		'id' => 'menu_location',
+		'type' => 'select',
+		'options' => array(
+			'left' => __( 'Left', 'hamburger' ),
+			'!right' => __( 'Right (PRO)', 'hamburger' ),
+		),
+		'default' => 'left',
+	) );
 
 	
 	
