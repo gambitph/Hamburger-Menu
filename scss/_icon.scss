@@ -76,3 +76,10 @@ $barColor: #000;
     }
   }
 }
+
+.hamburger-left #hamburger-button {
+	right: auto !important;
+}
+.hamburger-right #hamburger-button {
+	left: auto !important;
+}

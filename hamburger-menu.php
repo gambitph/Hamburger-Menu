@@ -30,6 +30,13 @@ class GambitHamburgerMenu {
 	
 	public $menuClassToHide = '';
 	
+	/**
+	 * Some themes may have some compatibility issues, specify those here so we can add body classes
+	 */
+	public $compatibilityThemes = array(
+		'Twenty Fifteen',
+	);
+	
 	function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'registerMenu' ) );
 		add_filter( 'wp_nav_menu', array( $this, 'hideFrontendMenu' ), 10, 2 );
@@ -39,6 +46,7 @@ class GambitHamburgerMenu {
 		add_action( 'widgets_init', array( $this, 'initWidgets' ) );
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'initCustomizer' ) );
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'includeCustomizerTemplate' ) );
+		add_filter( 'body_class', array( $this, 'addThemeClass' ) );
 	}
 	
 	public function registerMenu() {
@@ -94,6 +102,7 @@ class GambitHamburgerMenu {
 			'hide_selectors' => $titan->getOption( 'hide_selectors' ),
 			'is_fixed' => $titan->getOption( 'menu_type' ) ? ( stripos( $titan->getOption( 'menu_type' ), '-fixed' ) !== false ? true : false ) : false,
 			'menu_slide_type' => $titan->getOption( 'menu_slide_type' ),
+			'menu_location' => $titan->getOption( 'menu_location' ),
 		) );
 	}
 	
@@ -116,6 +125,20 @@ class GambitHamburgerMenu {
 			'before_title' => '<h4 class="widget-title">',
 			'after_title' => '</h4>',
 		) );
+	}
+	
+	
+	/**
+	 * Some themes may have some compatibility issues, we add the classes to support them here
+	 */
+	public function addThemeClass( $classes ) {
+		$currentTheme = wp_get_theme();
+		
+		if ( in_array( $currentTheme->get( 'Name' ), $this->compatibilityThemes ) ) {
+			$classes[] = 'hamburger-' . str_replace( ' ', '-', strtolower( $currentTheme->get( 'Name' ) ) );
+		}
+		
+		return $classes;
 	}
 	
 }

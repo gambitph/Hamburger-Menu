@@ -78,6 +78,12 @@
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
 
+.hamburger-left #hamburger-button {
+  right: auto !important; }
+
+.hamburger-right #hamburger-button {
+  left: auto !important; }
+
 body {
   position: relative !important; }
 
@@ -144,6 +150,10 @@ body {
       #hamburger-menu-container .hamburger-menu li:last-child {
         border-bottom: 1px solid #2C3E50; }
 
+.hamburger-right #hamburger-menu-container {
+  left: auto;
+  right: 0; }
+
 #hamburger-menu-container {
   -moz-transition: -moz-transform 0.6s ease-in-out;
   -o-transition: -o-transform 0.6s ease-in-out;
@@ -153,24 +163,22 @@ body {
   -ms-transform: translateX(-350px);
   -webkit-transform: translateX(-350px);
   transform: translateX(-350px); }
-
-#hamburger-menu-container.open {
-  -moz-transform: translateX(0px);
-  -ms-transform: translateX(0px);
-  -webkit-transform: translateX(0px);
-  transform: translateX(0px); }
+  #hamburger-menu-container.open {
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
 
 #hamburger-button {
   -moz-transition: -moz-transform 0.6s ease-in-out;
   -o-transition: -o-transform 0.6s ease-in-out;
   -webkit-transition: -webkit-transform 0.6s ease-in-out;
   transition: transform 0.6s ease-in-out; }
-
-#hamburger-button.close {
-  -moz-transform: translateX(350px);
-  -ms-transform: translateX(350px);
-  -webkit-transform: translateX(350px);
-  transform: translateX(350px); }
+  #hamburger-button.close {
+    -moz-transform: translateX(350px);
+    -ms-transform: translateX(350px);
+    -webkit-transform: translateX(350px);
+    transform: translateX(350px); }
 
 #hamburger-content-wrapper {
   -moz-transition: -moz-transform 0.6s ease-in-out;
@@ -201,6 +209,40 @@ html.slide-move-whole.hamburger_open body:before, html.slide-move-whole.hamburge
   transform: translateX(350px); }
 
 /**
+ * Right side menu
+ */
+html.hamburger-right #hamburger-menu-container {
+  -moz-transform: translateX(350px);
+  -ms-transform: translateX(350px);
+  -webkit-transform: translateX(350px);
+  transform: translateX(350px); }
+  html.hamburger-right #hamburger-menu-container.open {
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+html.hamburger-right #hamburger-button.close {
+  -moz-transform: translateX(-350px);
+  -ms-transform: translateX(-350px);
+  -webkit-transform: translateX(-350px);
+  transform: translateX(-350px); }
+html.hamburger-right.hamburger_open body:before, html.hamburger-right.hamburger_open body:after, html.hamburger-right.hamburger_open #hamburger-content-wrapper {
+  -moz-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  -webkit-transform: translateX(-100px);
+  transform: translateX(-100px); }
+html.hamburger-right.slide-fixed.hamburger_open body:before, html.hamburger-right.slide-fixed.hamburger_open body:after, html.hamburger-right.slide-fixed.hamburger_open #hamburger-content-wrapper {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0); }
+html.hamburger-right.slide-move-whole.hamburger_open body:before, html.hamburger-right.slide-move-whole.hamburger_open body:after, html.hamburger-right.slide-move-whole.hamburger_open #hamburger-content-wrapper {
+  -moz-transform: translateX(-350px);
+  -ms-transform: translateX(-350px);
+  -webkit-transform: translateX(-350px);
+  transform: translateX(-350px); }
+
+/**
  * Animation required styles
  */
 html.hamburger_open {
@@ -215,8 +257,6 @@ body:before, body:after {
 /**
  * Fixed menu required styles
  */
-html.hamburger_fixed #hamburger-content-wrapper {
-  margin-left: 350px; }
 html.hamburger_fixed #hamburger-menu-container {
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -224,6 +264,12 @@ html.hamburger_fixed #hamburger-menu-container {
   transform: translateX(0); }
 html.hamburger_fixed #hamburger-button {
   display: none !important; }
+
+html.hamburger-left.hamburger_fixed #hamburger-content-wrapper {
+  margin-left: 350px; }
+
+html.hamburger-right.hamburger_fixed #hamburger-content-wrapper {
+  margin-right: 350px; }
 
 #hamburger-overlay {
   width: 0;
@@ -254,13 +300,13 @@ body.admin-bar .hamburger-button-container {
 /**
  * Only apply these fixes if the current theme is twenty-fifteen
  */
-html.hamburger_fixed body:before {
+html.hamburger-left.hamburger_fixed body.hamburger-twenty-fifteen:before {
   margin-left: 350px; }
 
 @media screen and (min-width: 87.6875em) {
-  html.hamburger_fixed body:before {
+  html.hamburger_fixed body.hamburger-twenty-fifteen:before {
     width: -webkit-calc(45% - 350px);
     width: calc(45% - 350px); } }
 @media screen and (min-width: 59.6875em) {
-  html.hamburger_fixed body:before {
+  html.hamburger_fixed body.hamburger-twenty-fifteen:before {
     width: 21%; } }

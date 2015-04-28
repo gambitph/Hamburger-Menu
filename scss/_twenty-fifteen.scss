@@ -1,14 +1,16 @@
 /**
  * Only apply these fixes if the current theme is twenty-fifteen
  */
-html.hamburger_fixed {
-	body:before {
-		margin-left: 350px;
+html.hamburger-left {
+	&.hamburger_fixed {
+		body.hamburger-twenty-fifteen:before {
+			margin-left: 350px;
+		}
 	}
 }
 @media screen and (min-width: 87.6875em) {
 	html.hamburger_fixed {
-		body:before {
+		body.hamburger-twenty-fifteen:before {
 			width: -webkit-calc(45% - 350px);
 			width: calc(45% - 350px);
 		}
@@ -17,7 +19,7 @@ html.hamburger_fixed {
 
 @media screen and (min-width: 59.6875em) {
 	html.hamburger_fixed {
-		body:before {
+		body.hamburger-twenty-fifteen:before {
 			width: 21%;
 		}
 	}

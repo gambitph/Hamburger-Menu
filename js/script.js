@@ -12,7 +12,8 @@ jQuery(document).ready(function($) {
 	if ( hamburger_vars.is_fixed === '1' ) {
 		$('html').addClass('hamburger_fixed');
 	}
-	$('html').addClass( 'slide-' + hamburger_vars.menu_slide_type );
+	$('html').addClass( 'slide-' + hamburger_vars.menu_slide_type )
+		.addClass( 'hamburger-' + hamburger_vars.menu_location );
 	
 	
 	$('body').on('hamburger_open', function() {
