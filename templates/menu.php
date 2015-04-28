@@ -30,15 +30,21 @@ $titan = TitanFramework::getInstance( 'hamburger_menu' );
 			
 			<?php wp_nav_menu( array( 'theme_location' => 'hamburger', 'container_id' => 'hamburger-menu', 'container_class' => 'hamburger-menu' ) ) ?>
 			
-			<div id="hamburger-widget-container">
-				<div class="widget">
-				dks jadn kjsandk jsnakdjn sdnaskjd aksjnd kjsnadjkqb dwkjhbdjh bsahjdb hjsab dhj bashj bdja
+			<?php
+			if ( is_active_sidebar( 'hamburger-top-widgets' ) ) :
+				?>
+				<div id="hamburger-widget-container">
+					<?php dynamic_sidebar( 'hamburger-top-widgets' ) ?>
 				</div>
-			</div>
+				<?php
+			endif;
+			?>
 			
-			<div id="hamburger-social-container">
+			<?php do_action( 'hamburger_social_links' ) ?>
+			
+			<!-- <div id="hamburger-social-container">
 				<a href='http://twitter.com/'><span class="genericon genericon-twitter"></span></a>
-			</div>
+			</div> -->
 			
 		</div>
 	</div>

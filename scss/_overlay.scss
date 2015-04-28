@@ -1,0 +1,17 @@
+#hamburger-overlay {
+	width: 0;
+	height: 0;
+	position: absolute;
+	z-index: 99998;
+	left: 0;
+	top: 0;
+	@include transition(opacity .4s);
+	opacity: 0;
+	background: #000;
+	cursor: pointer;
+}
+body.hamburger_open #hamburger-overlay {
+	width: 100vw;
+	height: 100vh;
+	opacity: 1;
+}

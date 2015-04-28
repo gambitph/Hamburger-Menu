@@ -19,6 +19,8 @@ $backgroundColor: #fff;
   position: absolute;
   display: block;
   outline: none;
+  cursor: pointer;
+  z-index: 99999;
   .hamburger-button-icon {
     position: absolute;
     top: 50%;

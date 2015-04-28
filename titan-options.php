@@ -23,21 +23,6 @@ function hamburger_create_options() {
 		'panel_desc' => '',
 	) );
 	
-	$section->createOption( array(
-		'name' => __( 'The Type of Menu to Display', 'hamburger' ),
-		'id' => 'menu_type',
-		'type' => 'select',
-		'desc' => __( 'Choose your menu flavor:<br>Basic - Plain menu<br>Basic Fixed - Basic & fixed on the side<br>Designed (PRO) - With descriptions & icons<br>Designed Fixed (PRO) - Designed & fixed on the side<br>Full Screen (PRO) - A full screen basic menu', 'hamburger' ),
-		'options' => array(
-			'basic' => __( 'Basic', 'hamburger' ),
-			'basic-fixed' => __( 'Basic Fixed', 'hamburger' ),
-			'!designed' => __( 'Designed (PRO)', 'hamburger' ),
-			'!designed-fixed' => __( 'Designed Fixed (PRO)', 'hamburger' ),
-			'!fullscreen' => __( 'Full Screen (PRO)', 'hamburger' ),
-		),
-		'default' => 'basic',
-	) );
-	
 	$options = array( '' => '- Select -' );
 	foreach ( get_registered_nav_menus() as $menuSlug => $menuName ) {
 		if ( $menuSlug !== 'hamburger' ) {
@@ -194,6 +179,56 @@ function hamburger_create_options() {
 		'max' => '1.0',
 		'step' => '0.01',
 		'css' => '.hamburger-button-container { opacity: value; }',
+	) );
+
+	
+	
+	
+	$section = $titan->createThemeCustomizerSection( array(
+		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
+	    'name' => __( 'Menu Style', 'hamburgermenu' ),
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'The Type of Menu to Display', 'hamburger' ),
+		'id' => 'menu_type',
+		'type' => 'select',
+		'desc' => __( 'Choose your menu flavor:<br>Basic - Plain menu<br>Basic Fixed - Basic & fixed on the side<br>Designed (PRO) - With descriptions & icons<br>Designed Fixed (PRO) - Designed & fixed on the side<br>Full Screen (PRO) - A full screen basic menu', 'hamburger' ),
+		'options' => array(
+			'basic' => __( 'Basic', 'hamburger' ),
+			'basic-fixed' => __( 'Basic Fixed', 'hamburger' ),
+			'!designed' => __( 'Designed (PRO)', 'hamburger' ),
+			'!designed-fixed' => __( 'Designed Fixed (PRO)', 'hamburger' ),
+			'!fullscreen' => __( 'Full Screen (PRO)', 'hamburger' ),
+		),
+		'default' => 'basic',
+	) );
+
+	
+	
+	
+	$section = $titan->createThemeCustomizerSection( array(
+		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
+	    'name' => __( 'Overlay Colors', 'hamburgermenu' ),
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Overlay Color', 'hamburger' ),
+		'id' => 'overlay_color',
+		'type' => 'color',
+		'default' => '#000000',
+		'css' => '#hamburger-overlay { background: value; }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Overlay Opacity', 'hamburger' ),
+		'id' => 'overlay_opacity',
+		'type' => 'number',
+		'default' => '0.4',
+		'min' => '0.0',
+		'max' => '1.0',
+		'step' => '0.01',
+		'css' => 'body.hamburger_open #hamburger-overlay { opacity: value; }',
 	) );
 
 	

@@ -1,0 +1,21 @@
+#hamburger-menu-container {
+	@include transition(all .4s);
+	@include transform(translateX(-100%));
+	opacity: 1 !important;
+}
+#hamburger-menu-container.open {
+	@include transform(translateX(-100px));
+}
+#hamburger-button {
+	@include transition(all .4s);
+}
+#hamburger-button.close {
+	background: transparent;
+	left: 360px;
+}
+body {
+	@include transition(all .4s);
+}
+body.hamburger_open {
+	@include transform(translateX(100px));
+}

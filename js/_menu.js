@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
 
-
+	$('body').prepend( '<div id="hamburger-overlay"></div>' );
 	$('body').prepend( wp.template( 'hamburger-menu' ) );
 
 

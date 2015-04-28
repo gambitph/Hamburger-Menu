@@ -106,13 +106,13 @@ class GambitHamburgerMenu {
 	
 	public function initWidgets() {
 		register_sidebar( array(
-			'name'          => __( 'Hamburger Menu Top Level Widgets', 'regala' ),
-			'id'            => 'main-menu',
-			'description'   => __( 'Widgets here appear in the main menu of the site.', 'regala' ),
+			'name' => __( 'Hamburger Menu Top Widgets', 'hamburgermenu' ),
+			'id' => 'hamburger-top-widgets',
+			'description' => __( 'Widgets here appear in the hamburger menu.', 'hamburgermenu' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h4 class="widget-title">',
-			'after_title'   => '</h4>',
+			'after_widget' => '</aside>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
 		) );
 	}
 	

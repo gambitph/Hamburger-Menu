@@ -40,9 +40,14 @@ body {
       padding-bottom: 30px;
     }
   }
-  #hamburger-logo-container img {
-    margin-left: 50%;
-    @include transform(translateX(-50%));
+  #hamburger-logo-container {
+	  a {
+		  display: block;
+	  }
+	  img {
+	    margin-left: 50%;
+	    @include transform(translateX(-50%));
+	  }
   }
   #hamburger-social-container {
     box-sizing: border-box;

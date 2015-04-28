@@ -10,7 +10,9 @@
   left: 0px;
   position: absolute;
   display: block;
-  outline: none; }
+  outline: none;
+  cursor: pointer;
+  z-index: 99999; }
   .hamburger-button-container .hamburger-button-icon {
     position: absolute;
     top: 50%;
@@ -109,6 +111,8 @@ body {
       padding-top: 30px; }
     #hamburger-menu-container #hamburger-menu-wrapper > *:last-child {
       padding-bottom: 30px; }
+  #hamburger-menu-container #hamburger-logo-container a {
+    display: block; }
   #hamburger-menu-container #hamburger-logo-container img {
     margin-left: 50%;
     -moz-transform: translateX(-50%);
@@ -140,3 +144,62 @@ body {
       color: #D2527F; }
       #hamburger-menu-container .hamburger-menu li:last-child {
         border-bottom: 1px solid #2C3E50; }
+
+#hamburger-menu-container {
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  opacity: 1 !important; }
+
+#hamburger-menu-container.open {
+  -moz-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  -webkit-transform: translateX(-100px);
+  transform: translateX(-100px); }
+
+#hamburger-button {
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s; }
+
+#hamburger-button.close {
+  background: transparent;
+  left: 360px; }
+
+body {
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s; }
+
+body.hamburger_open {
+  -moz-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  -webkit-transform: translateX(100px);
+  transform: translateX(100px); }
+
+#hamburger-overlay {
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: 99998;
+  left: 0;
+  top: 0;
+  -moz-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  opacity: 0;
+  background: #000;
+  cursor: pointer; }
+
+body.hamburger_open #hamburger-overlay {
+  width: 100vw;
+  height: 100vh;
+  opacity: 1; }
