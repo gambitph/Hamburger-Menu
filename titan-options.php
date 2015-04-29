@@ -305,19 +305,19 @@ function hamburger_create_options() {
 	) );
 	
 	
+
+	$section = $titan->createThemeCustomizerSection( array(
+		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
+	    'name' => __( 'Social Icons', 'hamburgermenu' ),
+		'desc' => __( 'Display your social links as icons that appear on the bottom of your hamburger menu. Enter your social links in the fields below.', 'hamburgermenu' ),
+	) );
 	
-	if ( ! apply_filters( 'hamburger_social_links_options', false ) ) {
-		$section = $titan->createThemeCustomizerSection( array(
-			'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-		    'name' => __( 'Social Icons', 'hamburgermenu' ),
-			'desc' => __( 'Display your social links as icons that appear below your hamburger menu. This feature is only available in the PRO version', 'hamburgermenu' ) . '<br><a href="' . HAMBURGER_STORE_URL . '" class="button button-primary" target="_blank" style="margin-top: 5px">' . __( 'Go PRO now to enable social icons', 'hamburgermenu' ) . '</a>',
-		) );
-	
+	if ( ! apply_filters( 'hamburger_social_links_options', false, $section ) ) {
 		$section->createOption( array(
-			// 'name' => __( 'Top Logo', 'hamburgermenu' ),
 			'id' => 'social_dummy',
 			'hidden' => true,
-			'type' => 'text',
+			'type' => 'note',
+			'desc' => __( 'This feature is only available in the PRO version', 'hamburgermenu' ) . '<br><a href="' . HAMBURGER_STORE_URL . '" class="button button-primary" target="_blank" style="margin-top: 5px">' . __( 'Go PRO now to enable social icons', 'hamburgermenu' ) . '</a>',
 			'default' => '',
 		) );
 	}

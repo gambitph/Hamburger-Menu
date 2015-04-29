@@ -2,6 +2,20 @@ jQuery(document).ready(function($) {
 
 	$('body').prepend( '<div id="hamburger-overlay"></div>' );
 	$('body').prepend( wp.template( 'hamburger-menu' ) );
+	
+	
+	// Flick the menu left/right to close it
+	$('#hamburger-menu-container').on('flick', function(e) {
+		if ( $('html').hasClass('hamburger-left') ) {
+			if ( e.direction === -1 ) {
+				$('body').trigger('hamburger_close');
+			}
+		} else {
+			if ( e.direction === 1 ) {
+				$('body').trigger('hamburger_close');
+			}
+		}
+	});
 
 
 	// Always make sure that the main menu is in the middle of the page

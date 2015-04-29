@@ -41,10 +41,10 @@ $barColor: #000;
       @include transition(top .2s ease-in-out .2s, bottom .2s ease-in-out .2s, transform .2s ease-in-out 0s);
     }
     &:before {
-      top: -250%;
+		@include transform(translateY(-300%));
     }
     &:after {
-      bottom: -250%;
+		@include transform(translateY(300%));
     }
   }
 }
@@ -52,10 +52,10 @@ $barColor: #000;
 .hamburger-button-container:not(.close):hover {
   .hamburger-button-icon {
     &:before {
-      @include transform(translateX(10%));
+      @include transform(translateY(-300%) translateX(10%));
     }
     &:after {
-      @include transform(translateX(-5%));
+      @include transform(translateY(300%) translateX(-5%));
     }
   }
 }
@@ -67,11 +67,9 @@ $barColor: #000;
       @include transition(top .2s ease-in-out, bottom .2s ease-in-out, transform .2s ease-in-out .2s);
     }
     &:before {
-      top: 0;
       @include transform(rotate(45deg));
     }
     &:after {
-      bottom: 0;
       @include transform(rotate(-45deg));
     }
   }

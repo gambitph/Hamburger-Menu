@@ -1,4 +1,5 @@
 // @codekit-append "_images-loaded.js"
+// @codekit-append "_jquery.finger.js"
 // @codekit-append "_icon.js"
 // @codekit-append "_menu.js"
 // @codekit-append "_overlay.js"

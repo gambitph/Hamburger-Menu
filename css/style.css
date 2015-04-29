@@ -42,20 +42,26 @@
       -webkit-transition-delay: 0.2s, 0.2s, 0s;
       transition: top 0.2s ease-in-out 0.2s, bottom 0.2s ease-in-out 0.2s, transform 0.2s ease-in-out 0s; }
     .hamburger-button-container .hamburger-button-icon:before {
-      top: -250%; }
+      -moz-transform: translateY(-300%);
+      -ms-transform: translateY(-300%);
+      -webkit-transform: translateY(-300%);
+      transform: translateY(-300%); }
     .hamburger-button-container .hamburger-button-icon:after {
-      bottom: -250%; }
+      -moz-transform: translateY(300%);
+      -ms-transform: translateY(300%);
+      -webkit-transform: translateY(300%);
+      transform: translateY(300%); }
 
 .hamburger-button-container:not(.close):hover .hamburger-button-icon:before {
-  -moz-transform: translateX(10%);
-  -ms-transform: translateX(10%);
-  -webkit-transform: translateX(10%);
-  transform: translateX(10%); }
+  -moz-transform: translateY(-300%) translateX(10%);
+  -ms-transform: translateY(-300%) translateX(10%);
+  -webkit-transform: translateY(-300%) translateX(10%);
+  transform: translateY(-300%) translateX(10%); }
 .hamburger-button-container:not(.close):hover .hamburger-button-icon:after {
-  -moz-transform: translateX(-5%);
-  -ms-transform: translateX(-5%);
-  -webkit-transform: translateX(-5%);
-  transform: translateX(-5%); }
+  -moz-transform: translateY(300%) translateX(-5%);
+  -ms-transform: translateY(300%) translateX(-5%);
+  -webkit-transform: translateY(300%) translateX(-5%);
+  transform: translateY(300%) translateX(-5%); }
 
 .hamburger-button-container.close .hamburger-button-icon {
   background: transparent; }
@@ -66,13 +72,11 @@
     -webkit-transition-delay: 0s, 0s, 0.2s;
     transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out, transform 0.2s ease-in-out 0.2s; }
   .hamburger-button-container.close .hamburger-button-icon:before {
-    top: 0;
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg); }
   .hamburger-button-container.close .hamburger-button-icon:after {
-    bottom: 0;
     -moz-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
