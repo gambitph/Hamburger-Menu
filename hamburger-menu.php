@@ -84,6 +84,11 @@ class GambitHamburgerMenu {
 		
 		wp_enqueue_style( 'hamburger', HAMBURGER_URL . 'css/style.css', array(), HAMBURGER_VERSION );
 		wp_enqueue_script( 'hamburger', HAMBURGER_URL . 'js/min/script-min.js', array( 'jquery' ), HAMBURGER_VERSION, true );
+		
+		// Enqueue Genericons
+		if ( ! wp_script_is( 'genericons', 'registered' ) ) {
+			wp_enqueue_style( 'genericons', HAMBURGER_URL . 'fonts/genericons.css' );
+		}
 	}
 	
 	public function initCustomizer() {

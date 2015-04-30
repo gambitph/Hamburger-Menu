@@ -31,7 +31,18 @@ body {
 		  padding-right: 30px;
 	  }
 	  .menu-item-has-children a {
-		  padding-right: 50px;
+		  padding-right: 40px;
+		  position: relative;
+		  &:after {
+			  content: '\f431';
+			  position: absolute;
+			  font-size: 15px;
+			  display: block;
+			  right: 15px;
+			  top: 50%;
+			  @include transform(translateY(-50%));
+			  font-family: genericons;
+		  }
 	  }
 	  > ul, > ul > li {
 		  margin: 0 !important;

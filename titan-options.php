@@ -284,13 +284,50 @@ function hamburger_create_options() {
 		'default' => '#161616',
 		'css' => '#hamburger-menu-container .hamburger-menu { li, li:last-child { border-color: value; } }',
 	) );
+
+	
+	$section->createOption( array(
+		'name' => __( 'Menu Top Level Background Color', 'hamburgermenu' ),
+		'id' => 'menu_topmenu_bg_color',
+		'type' => 'color',
+		'default' => '#212121',
+		'css' => '#hamburger-menu-container #hamburger-menu ul { background-color: value }',
+	) );
+
+	
+	$section->createOption( array(
+		'name' => __( 'Submenu Level 1 Background Color', 'hamburgermenu' ),
+		'id' => 'menu_submenu1_bg_color',
+		'type' => 'color',
+		'default' => '#1c1c1c',
+		'css' => '#hamburger-menu-container #hamburger-menu ul ul { background-color: value }',
+	) );
+
+	
+	$section->createOption( array(
+		'name' => __( 'Submenu Level 2 Background Color', 'hamburgermenu' ),
+		'id' => 'menu_submenu2_bg_color',
+		'type' => 'color',
+		'default' => '#141414',
+		'css' => '#hamburger-menu-container #hamburger-menu ul ul ul { background-color: value }',
+	) );
+
+	
+	$section->createOption( array(
+		'name' => __( 'Submenu Level 3+ Background Color', 'hamburgermenu' ),
+		'id' => 'menu_submenu3_bg_color',
+		'type' => 'color',
+		'default' => '#111111',
+		'css' => '#hamburger-menu-container #hamburger-menu ul ul ul ul { background-color: value }',
+	) );
 	
 	$section->createOption( array(
 		'name' => __( 'Title Text Color', 'hamburgermenu' ),
 		'id' => 'menu_title_color',
 		'type' => 'color',
 		'default' => '#939393',
-		'css' => '#hamburger-menu-container { h1, h2, h3, h4, h5, h6, th { span, em, strong, & { color: value } } }',
+		'css' => '#hamburger-menu-container { h1, h2, h3, h4, h5, h6, th { span, em, strong, & { color: value } } }
+			#hamburger-menu-container #hamburger-menu { a, a:link, a:visited { span { color: value } } }',
 	) );
 	
 	$section->createOption( array(
@@ -315,6 +352,14 @@ function hamburger_create_options() {
 		'type' => 'color',
 		'default' => '#19b5fe',
 		'css' => '#hamburger-menu-container { &, h1, h2, h3, h4, h5, h6 { a, a:visited, a:link { &:hover { color: value } } } }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Submenu Arrow Color', 'hamburgermenu' ),
+		'id' => 'menu_arrow_color',
+		'type' => 'color',
+		'default' => '#22a7f0',
+		'css' => '#hamburger-menu-container #hamburger-menu { a, a:visited, a:link { &:after { color: value } } }',
 	) );
 	
 	
@@ -374,7 +419,6 @@ function hamburger_create_options() {
 		'max' => '30',
 		'step' => '1',
 	) );
-
 
 	
 	
