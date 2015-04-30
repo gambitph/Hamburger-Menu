@@ -115,10 +115,10 @@ body {
     display: block;
     padding-left: 30px;
     padding-right: 30px; }
-  #hamburger-menu-container #hamburger-menu .menu-item-has-children a {
+  #hamburger-menu-container #hamburger-menu .menu-item-has-children > a, #hamburger-menu-container #hamburger-menu .page_item_has_children > a {
     padding-right: 40px;
     position: relative; }
-    #hamburger-menu-container #hamburger-menu .menu-item-has-children a:after {
+    #hamburger-menu-container #hamburger-menu .menu-item-has-children > a:after, #hamburger-menu-container #hamburger-menu .page_item_has_children > a:after {
       content: '\f431';
       position: absolute;
       font-size: 15px;

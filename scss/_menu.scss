@@ -30,7 +30,7 @@ body {
 		  padding-left: 30px;
 		  padding-right: 30px;
 	  }
-	  .menu-item-has-children a {
+	  .menu-item-has-children > a, .page_item_has_children > a {
 		  padding-right: 40px;
 		  position: relative;
 		  &:after {

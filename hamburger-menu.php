@@ -123,18 +123,18 @@ class GambitHamburgerMenu {
 	
 	public function initWidgets() {
 		register_sidebar( array(
-			'name' => __( 'Hamburger Menu Top Widgets', 'hamburgermenu' ),
-			'id' => 'hamburger-top-widgets',
-			'description' => __( 'Widgets here appear in the top area of the hamburger menu.', 'hamburgermenu' ),
+			'name' => __( 'Hamburger Menu Bottom Widgets', 'hamburgermenu' ),
+			'id' => 'hamburger-bottom-widgets',
+			'description' => __( 'Widgets here appear in the bottom area of the hamburger menu.', 'hamburgermenu' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h4 class="widget-title">',
 			'after_title' => '</h4>',
 		) );
 		register_sidebar( array(
-			'name' => __( 'Hamburger Menu Bottom Widgets', 'hamburgermenu' ),
-			'id' => 'hamburger-bottom-widgets',
-			'description' => __( 'Widgets here appear in the bottom area of the hamburger menu.', 'hamburgermenu' ),
+			'name' => __( 'Hamburger Menu Top Widgets', 'hamburgermenu' ),
+			'id' => 'hamburger-top-widgets',
+			'description' => __( 'Widgets here appear in the top area of the hamburger menu.', 'hamburgermenu' ),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h4 class="widget-title">',
