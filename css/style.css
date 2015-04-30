@@ -157,6 +157,8 @@ body {
       padding-top: 30px; }
     #hamburger-menu-container #hamburger-menu-wrapper > *:last-child {
       padding-bottom: 30px; }
+  #hamburger-menu-container #hamburger-menu {
+    padding-bottom: 30px; }
   #hamburger-menu-container #hamburger-logo-container a {
     display: block; }
   #hamburger-menu-container #hamburger-logo-container img {
@@ -172,11 +174,11 @@ body {
     text-align: center; }
   #hamburger-menu-container .hamburger-widget-container > * {
     margin: 0 !important;
-    padding: 15px 30px; }
+    padding: 15px 30px 30px; }
     #hamburger-menu-container .hamburger-widget-container > *:first-child {
       padding-top: 0; }
     #hamburger-menu-container .hamburger-widget-container > *:last-child {
-      padding-bottom: 0; }
+      padding-bottom: 30px; }
   #hamburger-menu-container .hamburger-widget-container input, #hamburger-menu-container .hamburger-widget-container textarea, #hamburger-menu-container .hamburger-widget-container iframe, #hamburger-menu-container .hamburger-widget-container embed {
     max-width: 100%; }
   #hamburger-menu-container .hamburger-widget-container img {

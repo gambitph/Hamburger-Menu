@@ -90,6 +90,9 @@ body {
       padding-bottom: 30px;
     }
   }
+  #hamburger-menu {
+	  padding-bottom: 30px;
+  }
   #hamburger-logo-container {
 	  a {
 		  display: block;
@@ -108,12 +111,12 @@ body {
   .hamburger-widget-container {
     > * {
 		margin: 0 !important;
-      padding: 15px 30px;
+      padding: 15px 30px 30px;
       &:first-child {
         padding-top: 0;
       }
       &:last-child {
-        padding-bottom: 0;
+        padding-bottom: 30px;
       }
     }
     input, textarea, iframe, embed {
