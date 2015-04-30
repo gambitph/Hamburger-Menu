@@ -25,8 +25,28 @@ body {
 	}
   }
   #hamburger-menu {
+	  a {
+		  display: block;
+		  padding-left: 30px;
+		  padding-right: 30px;
+	  }
 	  > ul, > ul > li {
 		  margin: 0 !important;
+	  }
+	  ul ul {
+		  margin: 0;
+	  }
+	  li.menu-item-has-children + li {
+		  border-top: 0;
+	  }
+	  li li a {
+		  padding-left: 60px;
+	  }
+	  li li li a {
+		  padding-left: 90px;
+	  }
+	  li li li li a {
+		  padding-left: 120px;
 	  }
   }
   #hamburger-menu-wrapper > * {
@@ -77,7 +97,6 @@ body {
   .hamburger-menu {
     padding-left: 0;
     li {
-      padding: 15px 30px;
       border-top: 1px solid #2C3E50 ;
       color: #D2527F;
       &:last-child {

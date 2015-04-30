@@ -193,6 +193,33 @@ function hamburger_create_options() {
 	
 	$section = $titan->createThemeCustomizerSection( array(
 		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
+	    'name' => __( 'Overlay Colors', 'hamburgermenu' ),
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Overlay Color', 'hamburgermenu' ),
+		'id' => 'overlay_color',
+		'type' => 'color',
+		'default' => '#000000',
+		'css' => '#hamburger-overlay { background: value; }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Overlay Opacity', 'hamburgermenu' ),
+		'id' => 'overlay_opacity',
+		'type' => 'number',
+		'default' => '0.3',
+		'min' => '0.0',
+		'max' => '1.0',
+		'step' => '0.01',
+		'css' => '.hamburger_open #hamburger-overlay { opacity: value; }',
+	) );
+
+	
+	
+	
+	$section = $titan->createThemeCustomizerSection( array(
+		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
 	    'name' => __( 'Menu Style', 'hamburgermenu' ),
 	) );
 	
@@ -239,44 +266,132 @@ function hamburger_create_options() {
 	
 	$section = $titan->createThemeCustomizerSection( array(
 		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Overlay Colors', 'hamburgermenu' ),
-	) );
-	
-	$section->createOption( array(
-		'name' => __( 'Overlay Color', 'hamburgermenu' ),
-		'id' => 'overlay_color',
-		'type' => 'color',
-		'default' => '#000000',
-		'css' => '#hamburger-overlay { background: value; }',
-	) );
-	
-	$section->createOption( array(
-		'name' => __( 'Overlay Opacity', 'hamburgermenu' ),
-		'id' => 'overlay_opacity',
-		'type' => 'number',
-		'default' => '0.3',
-		'min' => '0.0',
-		'max' => '1.0',
-		'step' => '0.01',
-		'css' => '.hamburger_open #hamburger-overlay { opacity: value; }',
-	) );
-
-	
-	
-	
-	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Menu Colors', 'hamburgermenu' ),
+	    'name' => __( 'Menu Colors & Styles', 'hamburgermenu' ),
 	) );
 	
 	$section->createOption( array(
 		'name' => __( 'Background Color', 'hamburgermenu' ),
 		'id' => 'menu_bg_color',
 		'type' => 'color',
-		'default' => '#34495E',
+		'default' => '#212121',
 		'css' => '#hamburger-menu-container { background: value; }',
 	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Border Color', 'hamburgermenu' ),
+		'id' => 'menu_border_color',
+		'type' => 'color',
+		'default' => '#161616',
+		'css' => '#hamburger-menu-container .hamburger-menu { li, li:last-child { border-color: value; } }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Title Text Color', 'hamburgermenu' ),
+		'id' => 'menu_title_color',
+		'type' => 'color',
+		'default' => '#939393',
+		'css' => '#hamburger-menu-container { h1, h2, h3, h4, h5, h6, th { span, em, strong, & { color: value } } }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Normal Text Color', 'hamburgermenu' ),
+		'id' => 'menu_text_color',
+		'type' => 'color',
+		'default' => '#939393',
+		'css' => '#hamburger-menu-container { li, ol, span, div, td, & { color: value } }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Text Link Color', 'hamburgermenu' ),
+		'id' => 'menu_link_color',
+		'type' => 'color',
+		'default' => '#22a7f0',
+		'css' => '#hamburger-menu-container { &, h1, h2, h3, h4, h5, h6 { a, a:visited, a:link { color: value } } }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Text Link Hover Color', 'hamburgermenu' ),
+		'id' => 'menu_link_hover_color',
+		'type' => 'color',
+		'default' => '#19b5fe',
+		'css' => '#hamburger-menu-container { &, h1, h2, h3, h4, h5, h6 { a, a:visited, a:link { &:hover { color: value } } } }',
+	) );
+	
+	
+	if ( ! apply_filters( 'hamburger_menu_hover_options', false, $section ) ) {
+		$section->createOption( array(
+			'name' => __( 'Menu Link Hover Style', 'hamburgermenu' ),
+			'id' => 'menu_link_highlight_style',
+			'type' => 'select',
+			'default' => 'glow',
+			'options' => array(
+				'none' => __( 'None', 'hamburgermenu' ),
+				'fadein' => __( 'Highlight fade in', 'hamburgermenu' ),
+				'!left' => __( 'Highlight grow from the left (PRO)', 'hamburgermenu' ),
+				'!right' => __( 'Highlight grow from the right (PRO)', 'hamburgermenu' ),
+				'!top' => __( 'Highlight grow from the top (PRO)', 'hamburgermenu' ),
+				'!bottom' => __( 'Highlight grow from the bottom (PRO)', 'hamburgermenu' ),
+			),
+		) );
+	}
+	
+	$section->createOption( array(
+		'name' => __( 'Menu Link Hover Highlight', 'hamburgermenu' ),
+		'id' => 'menu_link_highlight_color',
+		'type' => 'color',
+		'default' => '#2f2f2f',
+		'css' => '#hamburger-menu-container #hamburger-menu li { a, a:visited, a:link { &:before { background-color: value; } } }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Menu Link Paddings', 'hamburgermenu' ),
+		'id' => 'menu_link_padding',
+		'type' => 'number',
+		'default' => '15',
+		'css' => '#hamburger-menu-container { #hamburger-menu, .widget { li a { padding-top: valuepx; padding-bottom: valuepx; } } }
+		',
+		'min' => '0',
+		'max' => '30',
+		'step' => '1',
+	) );
 
+
+	
+	
+	
+	$section = $titan->createThemeCustomizerSection( array(
+		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
+	    'name' => __( 'Menu Text Styles', 'hamburgermenu' ),
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Menu & Headings Font', 'hamburgermenu' ),
+		'id' => 'menu_headings_font',
+		'type' => 'font',
+		'show_color' => false,
+		'default' => array(
+			'font-family' => 'Roboto Condensed',
+	        'line-height' => '1.1em',
+	        'font-size' => '17px',
+			'font-weight' => '300',
+	    ),
+		'css' => '#hamburger-menu-container { li { a, a:visited, a:link { value } } }
+			#hamburger-menu-container { h1, h2, h3, h4, h5, h6 { value } }',
+	) );
+	
+	$section->createOption( array(
+		'name' => __( 'Normal Text Font', 'hamburgermenu' ),
+		'id' => 'menu_text_font',
+		'type' => 'font',
+		'show_color' => false,
+		'default' => array(
+			'font-family' => 'Roboto',
+	        'line-height' => '1.6em',
+	        'font-size' => '14px',
+			'font-weight' => '300',
+	    ),
+		'css' => '#hamburger-menu-container { div, li, ol, span, td, & { value } }',
+	) );
 	
 	
 	

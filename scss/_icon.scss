@@ -49,15 +49,18 @@ $barColor: #000;
   }
 }
 
-.hamburger-button-container:not(.close):hover {
-  .hamburger-button-icon {
-    &:before {
-      @include transform(translateY(-300%) translateX(10%));
-    }
-    &:after {
-      @include transform(translateY(300%) translateX(-5%));
-    }
-  }
+// Only do this for big screens since the transform may get stuck in the hovered state
+@media screen and (min-width: 787px) {
+	.hamburger-button-container:not(.close):hover {
+	  .hamburger-button-icon {
+	    &:before {
+	      @include transform(translateY(-300%) translateX(10%));
+	    }
+	    &:after {
+	      @include transform(translateY(300%) translateX(-5%));
+	    }
+	  }
+	}
 }
 
 .hamburger-button-container.close {

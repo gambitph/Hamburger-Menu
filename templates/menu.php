@@ -6,8 +6,15 @@ $titan = TitanFramework::getInstance( 'hamburger_menu' );
 
 ?>
 <script type="text/html" id="tmpl-hamburger-menu">
-
-	<div id="hamburger-menu-container">
+	<?php
+		
+	$titan = TitanFramework::getInstance( 'hamburger_menu' );
+	
+	$classes = array();
+	$classes[] = 'highlight-effect-' . $titan->getOption( 'menu_link_highlight_style' );
+	
+	?>
+	<div id="hamburger-menu-container" class="<?php echo esc_attr( implode( ' ', $classes ) ) ?>">
 		<div id="hamburger-menu-wrapper">
 			
 			<?php
