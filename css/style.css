@@ -140,6 +140,10 @@ body {
     padding-left: 90px; }
   #hamburger-menu-container #hamburger-menu li li li li a {
     padding-left: 120px; }
+  #hamburger-menu-container .hamburger-widget-container > * > *:first-child {
+    margin-top: 0 !important; }
+  #hamburger-menu-container .hamburger-widget-container > * > *:last-child {
+    margin-bottom: 0 !important; }
   #hamburger-menu-container .hamburger-widget-container ul {
     list-style: none !important; }
     #hamburger-menu-container .hamburger-widget-container ul li {

@@ -60,12 +60,24 @@ body {
 		  padding-left: 120px;
 	  }
   }
-  .hamburger-widget-container ul {
-	  list-style: none !important;
-	  li {
-	  	list-style: none !important;
-		padding-top: 5px;
-		padding-bottom: 5px;
+  .hamburger-widget-container {
+	  // widget contents should not change the spacing
+	  > * {
+		  > *:first-child {
+			  margin-top: 0 !important;
+		  }
+		  > *:last-child {
+			  margin-bottom: 0 !important;
+		  }
+	  }
+	  // Cleanup widget lists
+	  ul {
+	  	  list-style: none !important;
+	  	  li {
+	  	  	list-style: none !important;
+	  		padding-top: 5px;
+	  		padding-bottom: 5px;
+	  	  }
 	  }
   }
   #hamburger-menu-wrapper > * {

@@ -403,13 +403,13 @@ function hamburger_create_options() {
 
 	
 	$section->createOption( array(
-		'name' => __( 'Submenu Type', 'hamburgermenu' ),
+		'name' => __( 'Submenu Display Type', 'hamburgermenu' ),
 		'id' => 'menu_submenu_type',
 		'type' => 'select',
 		'default' => 'in-menu',
 		'options' => array(
-			'in-menu' => 'Display submenu in the main menu',
-			'!side-menu' => ''
+			'in-menu' => __( 'Inside the main menu', 'hamburgermenu' ),
+			'!side-menu' => __( 'On a new panel on the side (PRO)', 'hamburgermenu' ),
 		),
 	) );
 
