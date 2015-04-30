@@ -30,14 +30,14 @@ body {
 		  padding-left: 30px;
 		  padding-right: 30px;
 	  }
+	  .menu-item-has-children a {
+		  padding-right: 50px;
+	  }
 	  > ul, > ul > li {
 		  margin: 0 !important;
 	  }
 	  ul ul {
 		  margin: 0;
-	  }
-	  li.menu-item-has-children + li {
-		  border-top: 0;
 	  }
 	  li li a {
 		  padding-left: 60px;
@@ -52,7 +52,6 @@ body {
   #hamburger-menu-wrapper > * {
     width: $menuWidth;
     padding: 15px 0;
-//	margin: 0 !important;
     &:first-child {
       padding-top: 30px;
     }
@@ -110,4 +109,21 @@ body {
 .hamburger-right #hamburger-menu-container {
 	left: auto;
 	right: 0;
+}
+
+
+/**
+ * Submenus
+ */
+
+#hamburger-menu-container #hamburger-menu li {
+	overflow: hidden;
+	> ul {
+		position: absolute;
+		z-index: -999;
+		@include transition(height .6s ease-in-out);
+	}
+	ul > li:last-child {
+		border-bottom: 0;
+	}
 }

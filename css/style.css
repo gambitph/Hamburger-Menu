@@ -115,12 +115,12 @@ body {
     display: block;
     padding-left: 30px;
     padding-right: 30px; }
+  #hamburger-menu-container #hamburger-menu .menu-item-has-children a {
+    padding-right: 50px; }
   #hamburger-menu-container #hamburger-menu > ul, #hamburger-menu-container #hamburger-menu > ul > li {
     margin: 0 !important; }
   #hamburger-menu-container #hamburger-menu ul ul {
     margin: 0; }
-  #hamburger-menu-container #hamburger-menu li.menu-item-has-children + li {
-    border-top: 0; }
   #hamburger-menu-container #hamburger-menu li li a {
     padding-left: 60px; }
   #hamburger-menu-container #hamburger-menu li li li a {
@@ -170,6 +170,21 @@ body {
 .hamburger-right #hamburger-menu-container {
   left: auto;
   right: 0; }
+
+/**
+ * Submenus
+ */
+#hamburger-menu-container #hamburger-menu li {
+  overflow: hidden; }
+  #hamburger-menu-container #hamburger-menu li > ul {
+    position: absolute;
+    z-index: -999;
+    -moz-transition: height 0.6s ease-in-out;
+    -o-transition: height 0.6s ease-in-out;
+    -webkit-transition: height 0.6s ease-in-out;
+    transition: height 0.6s ease-in-out; }
+  #hamburger-menu-container #hamburger-menu li ul > li:last-child {
+    border-bottom: 0; }
 
 #hamburger-menu-container {
   -moz-transition: -moz-transform 0.6s ease-in-out;
@@ -291,11 +306,13 @@ html.hamburger-right.hamburger_fixed #hamburger-content-wrapper {
 /**
  * Menu highlights
  */
-#hamburger-menu-container #hamburger-menu li a, #hamburger-menu-container #hamburger-menu li a:visited, #hamburger-menu-container #hamburger-menu li a:link {
+#hamburger-menu-container a, #hamburger-menu-container a:link, #hamburger-menu-container a:visited {
   -moz-transition: all 0.6s ease-in-out;
   -o-transition: all 0.6s ease-in-out;
   -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out; }
+
+#hamburger-menu-container #hamburger-menu li a, #hamburger-menu-container #hamburger-menu li a:visited, #hamburger-menu-container #hamburger-menu li a:link {
   z-index: 1;
   position: relative; }
   #hamburger-menu-container #hamburger-menu li a:before, #hamburger-menu-container #hamburger-menu li a:visited:before, #hamburger-menu-container #hamburger-menu li a:link:before {
@@ -312,22 +329,32 @@ html.hamburger-right.hamburger_fixed #hamburger-content-wrapper {
     -o-transition: -o-transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
     -webkit-transition: -webkit-transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-    -moz-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%); }
+    opacity: 0; }
 
 /**
  * Highlight animations
  */
 #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:before, #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:link:before, #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:visited:before {
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
   opacity: 0; }
 #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:hover:before, #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:link:hover:before, #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li a:visited:hover:before {
   opacity: 1; }
+
+#hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:before, #hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:link:before, #hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:visited:before {
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  opacity: 1; }
+#hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:hover:before, #hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:link:hover:before, #hamburger-menu-container.highlight-effect-tab #hamburger-menu li a:visited:hover:before {
+  -moz-transform: translateX(calc(-100% + 10px));
+  -ms-transform: translateX(calc(-100% + 10px));
+  -webkit-transform: translateX(calc(-100% + 10px));
+  transform: translateX(calc(-100% + 10px));
+  opacity: 1; }
+
+#hamburger-menu-container.highlight-grow #hamburger-menu li a:hover, #hamburger-menu-container.highlight-grow #hamburger-menu li a:link:hover, #hamburger-menu-container.highlight-grow #hamburger-menu li a:visited:hover {
+  padding-top: 30px;
+  padding-bottom: 30px; }
 
 #hamburger-overlay {
   width: 0;

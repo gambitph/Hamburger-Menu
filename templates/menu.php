@@ -12,6 +12,7 @@ $titan = TitanFramework::getInstance( 'hamburger_menu' );
 	
 	$classes = array();
 	$classes[] = 'highlight-effect-' . $titan->getOption( 'menu_link_highlight_style' );
+	$classes[] = 'highlight-' . $titan->getOption( 'menu_link_highlight_grow_style' );
 	
 	?>
 	<div id="hamburger-menu-container" class="<?php echo esc_attr( implode( ' ', $classes ) ) ?>">

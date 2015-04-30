@@ -327,10 +327,11 @@ function hamburger_create_options() {
 			'options' => array(
 				'none' => __( 'None', 'hamburgermenu' ),
 				'fadein' => __( 'Highlight fade in', 'hamburgermenu' ),
-				'!left' => __( 'Highlight grow from the left (PRO)', 'hamburgermenu' ),
-				'!right' => __( 'Highlight grow from the right (PRO)', 'hamburgermenu' ),
-				'!top' => __( 'Highlight grow from the top (PRO)', 'hamburgermenu' ),
-				'!bottom' => __( 'Highlight grow from the bottom (PRO)', 'hamburgermenu' ),
+				'tab' => __( 'Highlight tab', 'hamburgermenu' ),
+				'!grow-left' => __( 'Highlight grow from the left (PRO)', 'hamburgermenu' ),
+				'!grow-right' => __( 'Highlight grow from the right (PRO)', 'hamburgermenu' ),
+				'!grow-top' => __( 'Highlight grow from the top (PRO)', 'hamburgermenu' ),
+				'!grow-bottom' => __( 'Highlight grow from the bottom (PRO)', 'hamburgermenu' ),
 			),
 		) );
 	}
@@ -342,6 +343,17 @@ function hamburger_create_options() {
 		'default' => '#2f2f2f',
 		'css' => '#hamburger-menu-container #hamburger-menu li { a, a:visited, a:link { &:before { background-color: value; } } }',
 	) );
+
+	$section->createOption( array(
+		'name' => __( 'Menu Link Accordion-Like Grow Effect', 'hamburgermenu' ),
+		'id' => 'menu_link_highlight_grow_style',
+		'type' => 'select',
+		'default' => 'none',
+		'options' => array(
+			'none' => __( 'None', 'hamburgermenu' ),
+			'grow' => __( 'Grow Taller', 'hamburgermenu' ),
+		),
+	) );
 	
 	$section->createOption( array(
 		'name' => __( 'Menu Link Paddings', 'hamburgermenu' ),
@@ -349,6 +361,14 @@ function hamburger_create_options() {
 		'type' => 'number',
 		'default' => '15',
 		'css' => '#hamburger-menu-container { #hamburger-menu, .widget { li a { padding-top: valuepx; padding-bottom: valuepx; } } }
+			#hamburger-menu-container.highlight-grow #hamburger-menu li {
+				a, a:link, a:visited {
+					&:hover {
+						padding-top: valuepx + 12px;
+						padding-bottom: valuepx + 12px;
+					}
+				}
+			}
 		',
 		'min' => '0',
 		'max' => '30',

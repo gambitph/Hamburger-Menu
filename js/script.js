@@ -2,6 +2,7 @@
 // @codekit-append "_jquery.finger.js"
 // @codekit-append "_icon.js"
 // @codekit-append "_menu.js"
+// @codekit-append "_menu-hover.js"
 // @codekit-append "_overlay.js"
 // @codekit-append "_customizer.js"
 

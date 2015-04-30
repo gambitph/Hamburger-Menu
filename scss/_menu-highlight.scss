@@ -1,10 +1,14 @@
 /**
  * Menu highlights
  */
+#hamburger-menu-container {
+	a, a:link, a:visited {
+		@include transition(all .6s ease-in-out);
+	}
+}
 #hamburger-menu-container #hamburger-menu {
 	li {
 		a, a:visited, a:link {
-			@include transition(all .6s ease-in-out);
 			z-index: 1;
 			position: relative;
 			&:before {
@@ -18,7 +22,7 @@
 				display: block;
 				z-index: -1;
 				@include transition(transform .6s ease-in-out, opacity .6s ease-in-out);
-				@include transform(translateX(-100%));
+				opacity: 0;
 			}
 		}
 	}
@@ -31,11 +35,31 @@
 #hamburger-menu-container.highlight-effect-fadein #hamburger-menu li {
 	a, a:link, a:visited {
 		&:before {
-			@include transform(translateX(0%));
 			opacity: 0;
 		}
 		&:hover:before {
 			opacity: 1;
+		}
+	}
+}
+#hamburger-menu-container.highlight-effect-tab #hamburger-menu li {
+	a, a:link, a:visited {
+		&:before {
+			@include transform(translateX(-100%));
+			opacity: 1;
+		}
+		&:hover:before {
+			@include transform(translateX(calc(-100% + 10px)));
+			opacity: 1;
+		}
+	}
+}
+// This is overridden by a calculated value of +15px in titan-options
+#hamburger-menu-container.highlight-grow #hamburger-menu li {
+	a, a:link, a:visited {
+		&:hover {
+			padding-top: 30px;
+			padding-bottom: 30px;
 		}
 	}
 }
