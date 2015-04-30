@@ -293,33 +293,6 @@ function hamburger_create_options() {
 		'default' => '#212121',
 		'css' => '#hamburger-menu-container #hamburger-menu ul { background-color: value }',
 	) );
-
-	
-	$section->createOption( array(
-		'name' => __( 'Submenu Level 1 Background Color', 'hamburgermenu' ),
-		'id' => 'menu_submenu1_bg_color',
-		'type' => 'color',
-		'default' => '#1c1c1c',
-		'css' => '#hamburger-menu-container #hamburger-menu ul ul { background-color: value }',
-	) );
-
-	
-	$section->createOption( array(
-		'name' => __( 'Submenu Level 2 Background Color', 'hamburgermenu' ),
-		'id' => 'menu_submenu2_bg_color',
-		'type' => 'color',
-		'default' => '#141414',
-		'css' => '#hamburger-menu-container #hamburger-menu ul ul ul { background-color: value }',
-	) );
-
-	
-	$section->createOption( array(
-		'name' => __( 'Submenu Level 3+ Background Color', 'hamburgermenu' ),
-		'id' => 'menu_submenu3_bg_color',
-		'type' => 'color',
-		'default' => '#111111',
-		'css' => '#hamburger-menu-container #hamburger-menu ul ul ul ul { background-color: value }',
-	) );
 	
 	$section->createOption( array(
 		'name' => __( 'Title Text Color', 'hamburgermenu' ),
@@ -425,7 +398,54 @@ function hamburger_create_options() {
 	
 	$section = $titan->createThemeCustomizerSection( array(
 		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Menu Text Styles', 'hamburgermenu' ),
+	    'name' => __( 'Submenu Colors & Styles', 'hamburgermenu' ),
+	) );
+
+	
+	$section->createOption( array(
+		'name' => __( 'Submenu Type', 'hamburgermenu' ),
+		'id' => 'menu_submenu_type',
+		'type' => 'select',
+		'default' => 'in-menu',
+		'options' => array(
+			'in-menu' => 'Display submenu in the main menu',
+			'!side-menu' => ''
+		),
+	) );
+
+	
+	$section->createOption( array(
+		'name' => __( 'Submenu Level 1 Background Color', 'hamburgermenu' ),
+		'id' => 'menu_submenu1_bg_color',
+		'type' => 'color',
+		'default' => '#1c1c1c',
+		'css' => '#hamburger-menu-container #hamburger-menu ul ul { background-color: value }',
+	) );
+
+	
+	$section->createOption( array(
+		'name' => __( 'Submenu Level 2 Background Color', 'hamburgermenu' ),
+		'id' => 'menu_submenu2_bg_color',
+		'type' => 'color',
+		'default' => '#141414',
+		'css' => '#hamburger-menu-container #hamburger-menu ul ul ul { background-color: value }',
+	) );
+
+	
+	$section->createOption( array(
+		'name' => __( 'Submenu Level 3+ Background Color', 'hamburgermenu' ),
+		'id' => 'menu_submenu3_bg_color',
+		'type' => 'color',
+		'default' => '#111111',
+		'css' => '#hamburger-menu-container #hamburger-menu ul ul ul ul { background-color: value }',
+	) );
+
+	
+	
+	
+	$section = $titan->createThemeCustomizerSection( array(
+		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
+	    'name' => __( 'Menu Fonts', 'hamburgermenu' ),
 	) );
 	
 	$section->createOption( array(

@@ -130,7 +130,7 @@ body {
       -webkit-transform: translateY(-50%);
       transform: translateY(-50%);
       font-family: genericons; }
-  #hamburger-menu-container #hamburger-menu > ul, #hamburger-menu-container #hamburger-menu > ul > li {
+  #hamburger-menu-container #hamburger-menu > ul, #hamburger-menu-container #hamburger-menu > ul > li, #hamburger-menu-container #hamburger-menu > div > ul, #hamburger-menu-container #hamburger-menu > div > ul > li {
     margin: 0 !important; }
   #hamburger-menu-container #hamburger-menu ul ul {
     margin: 0; }
@@ -140,6 +140,12 @@ body {
     padding-left: 90px; }
   #hamburger-menu-container #hamburger-menu li li li li a {
     padding-left: 120px; }
+  #hamburger-menu-container .hamburger-widget-container ul {
+    list-style: none !important; }
+    #hamburger-menu-container .hamburger-widget-container ul li {
+      list-style: none !important;
+      padding-top: 5px;
+      padding-bottom: 5px; }
   #hamburger-menu-container #hamburger-menu-wrapper > * {
     width: 350px;
     padding: 15px 0; }
@@ -160,16 +166,16 @@ body {
     padding-left: 30px;
     padding-right: 30px;
     text-align: center; }
-  #hamburger-menu-container #hamburger-widget-container > * {
+  #hamburger-menu-container .hamburger-widget-container > * {
     margin: 0 !important;
     padding: 15px 30px; }
-    #hamburger-menu-container #hamburger-widget-container > *:first-child {
+    #hamburger-menu-container .hamburger-widget-container > *:first-child {
       padding-top: 0; }
-    #hamburger-menu-container #hamburger-widget-container > *:last-child {
+    #hamburger-menu-container .hamburger-widget-container > *:last-child {
       padding-bottom: 0; }
-  #hamburger-menu-container #hamburger-widget-container input, #hamburger-menu-container #hamburger-widget-container textarea, #hamburger-menu-container #hamburger-widget-container iframe, #hamburger-menu-container #hamburger-widget-container embed {
+  #hamburger-menu-container .hamburger-widget-container input, #hamburger-menu-container .hamburger-widget-container textarea, #hamburger-menu-container .hamburger-widget-container iframe, #hamburger-menu-container .hamburger-widget-container embed {
     max-width: 100%; }
-  #hamburger-menu-container #hamburger-widget-container img {
+  #hamburger-menu-container .hamburger-widget-container img {
     max-width: 100%;
     height: auto; }
   #hamburger-menu-container .hamburger-menu {

@@ -44,7 +44,7 @@ body {
 			  font-family: genericons;
 		  }
 	  }
-	  > ul, > ul > li {
+	  > ul, > ul > li, > div > ul, > div > ul > li { // the div is for when the menu is unassigned and is auto generated
 		  margin: 0 !important;
 	  }
 	  ul ul {
@@ -58,6 +58,14 @@ body {
 	  }
 	  li li li li a {
 		  padding-left: 120px;
+	  }
+  }
+  .hamburger-widget-container ul {
+	  list-style: none !important;
+	  li {
+	  	list-style: none !important;
+		padding-top: 5px;
+		padding-bottom: 5px;
 	  }
   }
   #hamburger-menu-wrapper > * {
@@ -85,7 +93,7 @@ body {
     padding-right: 30px;
     text-align: center;
   }
-  #hamburger-widget-container {
+  .hamburger-widget-container {
     > * {
 		margin: 0 !important;
       padding: 15px 30px;
