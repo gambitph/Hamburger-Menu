@@ -45,4 +45,29 @@ jQuery(document).ready(function($) {
 	hamburger_compute_margins();
 	$(window).resize(hamburger_compute_margins);
 	
+	
+	/**
+	 * Add dark/light class in the menu
+	 */
+	
+	// From http://24ways.org/2010/calculating-color-contrast
+	function getContrastYIQ(hexcolor){
+		
+		// Use hex color in case rgb was given
+        hexcolor = hexcolor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+        function hex(x) {
+            return ("0" + parseInt(x).toString(16)).slice(-2);
+        }
+        hexcolor = "#" + hex(hexcolor[1]) + hex(hexcolor[2]) + hex(hexcolor[3]);
+		
+		hexcolor = hexcolor.substr(1);
+		var r = parseInt(hexcolor.substr(0,2),16);
+		var g = parseInt(hexcolor.substr(2,2),16);
+		var b = parseInt(hexcolor.substr(4,2),16);
+		var yiq = ((r*299)+(g*587)+(b*114))/1000;
+		return (yiq >= 128) ? 'light' : 'dark';
+	}
+	
+	$('#hamburger-menu-container').addClass( getContrastYIQ( $('#hamburger-menu-container').css('backgroundColor') ) );
+	
 });

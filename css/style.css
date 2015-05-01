@@ -197,6 +197,19 @@ body {
   right: 0; }
 
 /**
+ * Menu input fields
+ */
+#hamburger-menu-container input, #hamburger-menu-container textarea {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #444;
+  border-radius: 4px; }
+#hamburger-menu-container.dark input, #hamburger-menu-container.dark textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ccc; }
+
+/**
  * Submenus
  */
 #hamburger-menu-container #hamburger-menu li {
