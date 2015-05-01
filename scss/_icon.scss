@@ -54,7 +54,7 @@ $barColor: #000;
 	.hamburger-button-container:not(.close):hover {
 	  .hamburger-button-icon {
 	    &:before {
-	      @include transform(translateY(-300%) translateX(10%));
+	      @include transform(translateY(-300%) translateX(5%));
 	    }
 	    &:after {
 	      @include transform(translateY(300%) translateX(-5%));

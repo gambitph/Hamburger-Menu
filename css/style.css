@@ -54,10 +54,10 @@
 
 @media screen and (min-width: 787px) {
   .hamburger-button-container:not(.close):hover .hamburger-button-icon:before {
-    -moz-transform: translateY(-300%) translateX(10%);
-    -ms-transform: translateY(-300%) translateX(10%);
-    -webkit-transform: translateY(-300%) translateX(10%);
-    transform: translateY(-300%) translateX(10%); }
+    -moz-transform: translateY(-300%) translateX(5%);
+    -ms-transform: translateY(-300%) translateX(5%);
+    -webkit-transform: translateY(-300%) translateX(5%);
+    transform: translateY(-300%) translateX(5%); }
   .hamburger-button-container:not(.close):hover .hamburger-button-icon:after {
     -moz-transform: translateY(300%) translateX(-5%);
     -ms-transform: translateY(300%) translateX(-5%);
