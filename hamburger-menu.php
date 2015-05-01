@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Hamburger Menu by Gambit
 * Plugin URI: https://github.com/gambitph/Hamburger-Menu
-* Description: 
+* Description: A mobile hamburger menu that displays a cool side menu. This can serve as a replacement menu for your theme.
 * Version: 1.0
 * Author: Benjamin Intal - Gambit Technologies Inc
 * Author URI: http://gambit.ph
