@@ -203,11 +203,39 @@ body {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.08);
   color: #444;
-  border-radius: 4px; }
+  border-radius: 4px;
+  padding: .5em .8em; }
 #hamburger-menu-container.dark input, #hamburger-menu-container.dark textarea {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: #ccc; }
+
+/**
+ * Buttons
+ */
+#hamburger-menu-container button, #hamburger-menu-container input[type="button"], #hamburger-menu-container input[type="submit"], #hamburger-menu-container input[type="reset"] {
+  background: #34495E;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: .5em .8em;
+  line-height: inherit;
+  display: inline-block;
+  text-transform: none;
+  text-decoration: none;
+  font-style: none;
+  opacity: 1;
+  -moz-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out; }
+  #hamburger-menu-container button:hover, #hamburger-menu-container input[type="button"]:hover, #hamburger-menu-container input[type="submit"]:hover, #hamburger-menu-container input[type="reset"]:hover {
+    opacity: 1;
+    text-transform: none;
+    text-decoration: none;
+    font-style: none; }
+#hamburger-menu-container [role="search"] input[type="submit"] {
+  display: none; }
 
 /**
  * Submenus

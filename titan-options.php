@@ -274,7 +274,13 @@ function hamburger_create_options() {
 		'id' => 'menu_bg_color',
 		'type' => 'color',
 		'default' => '#212121',
-		'css' => '#hamburger-menu-container { background: value; }',
+		'css' => '#hamburger-menu-container { background: value; }
+		#hamburger-menu-container {
+			button, input[type="button"], input[type="submit"], input[type="reset"] {
+				color: value;
+			}
+		}
+		',
 	) );
 	
 	$section->createOption( array(
@@ -308,7 +314,13 @@ function hamburger_create_options() {
 		'id' => 'menu_text_color',
 		'type' => 'color',
 		'default' => '#939393',
-		'css' => '#hamburger-menu-container { li, ol, span, div, td, & { color: value } }',
+		'css' => '#hamburger-menu-container { li, ol, span, div, td, & { color: value } }
+		#hamburger-menu-container {
+			input[type="reset"] {
+				background-color: value;
+			}
+		}
+		',
 	) );
 	
 	$section->createOption( array(
@@ -316,7 +328,13 @@ function hamburger_create_options() {
 		'id' => 'menu_link_color',
 		'type' => 'color',
 		'default' => '#22a7f0',
-		'css' => '#hamburger-menu-container { &, h1, h2, h3, h4, h5, h6 { a, a:visited, a:link { color: value } } }',
+		'css' => '#hamburger-menu-container { &, h1, h2, h3, h4, h5, h6 { a, a:visited, a:link { color: value } } }
+		#hamburger-menu-container {
+			button, input[type="button"], input[type="submit"] {
+				background-color: value;
+			}
+		}
+		',
 	) );
 	
 	$section->createOption( array(
@@ -324,7 +342,15 @@ function hamburger_create_options() {
 		'id' => 'menu_link_hover_color',
 		'type' => 'color',
 		'default' => '#19b5fe',
-		'css' => '#hamburger-menu-container { &, h1, h2, h3, h4, h5, h6 { a, a:visited, a:link { &:hover { color: value } } } }',
+		'css' => '#hamburger-menu-container { &, h1, h2, h3, h4, h5, h6 { a, a:visited, a:link { &:hover { color: value } } } }
+		#hamburger-menu-container {
+			button, input[type="button"], input[type="submit"], input[type="reset"] {
+				&:hover {
+					background-color: value;
+				}
+			}
+		}
+		',
 	) );
 	
 	$section->createOption( array(

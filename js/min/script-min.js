@@ -1253,6 +1253,18 @@ jQuery(document).ready(function($) {
 	
 	$('#hamburger-menu-container').addClass( getContrastYIQ( $('#hamburger-menu-container').css('backgroundColor') ) );
 	
+	
+	/**
+	 * Enter on input forms trigger a submit
+	 */
+	$('body').on('keydown', 'form input', function(e) {
+		if ( e.which === 13 ) {
+			var form = $(this).parents('form:eq(0)');
+			setTimeout(function() {
+				form.submit();
+			}, 10);
+		}
+	});
 });
 
 /**
