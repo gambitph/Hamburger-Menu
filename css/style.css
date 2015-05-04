@@ -147,11 +147,13 @@ body {
     #hamburger-menu-container .hamburger-widget-container > * > *:last-child {
       margin-bottom: 0 !important; }
   #hamburger-menu-container .hamburger-widget-container ul {
-    list-style: none !important; }
+    list-style: none !important;
+    border: 0; }
     #hamburger-menu-container .hamburger-widget-container ul li {
       list-style: none !important;
       padding-top: 10px;
-      padding-bottom: 10px; }
+      padding-bottom: 10px;
+      border: 0; }
   #hamburger-menu-container #hamburger-menu-wrapper > * {
     width: 350px;
     padding: 15px 0; }

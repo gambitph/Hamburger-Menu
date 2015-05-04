@@ -74,10 +74,12 @@ body {
 	  // Cleanup widget lists
 	  ul {
 	  	  list-style: none !important;
+		  border: 0;
 	  	  li {
 	  	  	list-style: none !important;
 	  		padding-top: 10px;
 	  		padding-bottom: 10px;
+			  border: 0;
 	  	  }
 	  }
   }
