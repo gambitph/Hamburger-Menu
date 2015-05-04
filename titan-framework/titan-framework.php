@@ -3,7 +3,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Used for tracking the version used
-defined( 'TF_VERSION' ) or define( 'TF_VERSION', '1.7.5' );
+defined( 'TF_VERSION' ) or define( 'TF_VERSION', '1.7.6' );
 // Used for text domains
 defined( 'TF_I18NDOMAIN' ) or define( 'TF_I18NDOMAIN', 'titan-framework' );
 // Used for general naming, e.g. nonces
