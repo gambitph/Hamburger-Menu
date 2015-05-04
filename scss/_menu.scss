@@ -47,6 +47,9 @@ body {
 	  > ul, > ul > li, > div > ul, > div > ul > li { // the div is for when the menu is unassigned and is auto generated
 		  margin: 0 !important;
 	  }
+	  ul {
+		  padding: 0 !important;
+	  }
 	  ul ul {
 		  margin: 0;
 	  }
@@ -81,6 +84,9 @@ body {
 	  		padding-bottom: 10px;
 			  border: 0;
 	  	  }
+	  }
+	  td, th, tr, tbody {
+		  background: transparent;
 	  }
   }
   #hamburger-menu-wrapper > * {
@@ -139,6 +145,9 @@ body {
         border-bottom: 1px solid #2C3E50 ;
       }
     }
+  }
+  .widget {
+	  background: transparent !important;
   }
 }
 

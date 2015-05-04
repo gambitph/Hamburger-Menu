@@ -35,6 +35,7 @@ class GambitHamburgerMenu {
 	 */
 	public $compatibilityThemes = array(
 		'Twenty Fifteen',
+		'Twenty Fourteen',
 	);
 	
 	function __construct() {
@@ -101,6 +102,12 @@ class GambitHamburgerMenu {
 	public function passScriptVariables() {
 		$titan = TitanFramework::getInstance( 'hamburger_menu' );
 		
+		$themeName = '';
+		$currentTheme = wp_get_theme();
+		if ( in_array( $currentTheme->get( 'Name' ), $this->compatibilityThemes ) ) {
+			$themeName = 'hamburger-' . str_replace( ' ', '-', strtolower( $currentTheme->get( 'Name' ) ) );
+		}
+		
  		wp_localize_script( 'hamburger', 'hamburger_vars', array(
 			'menu_hide_class' => $this->menuClassToHide,
 			'show_below_width' => $titan->getOption( 'show_below_width' ),
@@ -109,6 +116,8 @@ class GambitHamburgerMenu {
 			'menu_slide_type' => $titan->getOption( 'menu_slide_type' ),
 			'menu_location' => $titan->getOption( 'menu_location' ),
 			'is_customize_preview' => is_customize_preview(),
+			'theme_name' => $themeName,
+			'compatibility_mode' => $titan->getOption( 'menu_slide_type_compat' ),
 		) );
 	}
 	

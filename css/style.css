@@ -132,6 +132,8 @@ body {
       font-family: genericons; }
   #hamburger-menu-container #hamburger-menu > ul, #hamburger-menu-container #hamburger-menu > ul > li, #hamburger-menu-container #hamburger-menu > div > ul, #hamburger-menu-container #hamburger-menu > div > ul > li {
     margin: 0 !important; }
+  #hamburger-menu-container #hamburger-menu ul {
+    padding: 0 !important; }
   #hamburger-menu-container #hamburger-menu ul ul {
     margin: 0; }
   #hamburger-menu-container #hamburger-menu li li a {
@@ -154,6 +156,8 @@ body {
       padding-top: 10px;
       padding-bottom: 10px;
       border: 0; }
+  #hamburger-menu-container .hamburger-widget-container td, #hamburger-menu-container .hamburger-widget-container th, #hamburger-menu-container .hamburger-widget-container tr, #hamburger-menu-container .hamburger-widget-container tbody {
+    background: transparent; }
   #hamburger-menu-container #hamburger-menu-wrapper > * {
     width: 350px;
     padding: 15px 0; }
@@ -195,6 +199,8 @@ body {
       color: #D2527F; }
       #hamburger-menu-container .hamburger-menu li:last-child {
         border-bottom: 1px solid #2C3E50; }
+  #hamburger-menu-container .widget {
+    background: transparent !important; }
 
 .hamburger-right #hamburger-menu-container {
   left: auto;
@@ -299,10 +305,15 @@ html.hamburger_open body:before, html.hamburger_open body:after, html.hamburger_
   transform: translateX(100px); }
 
 html.slide-fixed.hamburger_open body:before, html.slide-fixed.hamburger_open body:after, html.slide-fixed.hamburger_open #hamburger-content-wrapper {
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transform: translateX(0); }
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none; }
+html.slide-fixed #hamburger-content-wrapper {
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none; }
 
 html.slide-move-whole.hamburger_open body:before, html.slide-move-whole.hamburger_open body:after, html.slide-move-whole.hamburger_open #hamburger-content-wrapper {
   -moz-transform: translateX(350px);
@@ -334,10 +345,10 @@ html.hamburger-right.hamburger_open body:before, html.hamburger-right.hamburger_
   -webkit-transform: translateX(-100px);
   transform: translateX(-100px); }
 html.hamburger-right.slide-fixed.hamburger_open body:before, html.hamburger-right.slide-fixed.hamburger_open body:after, html.hamburger-right.slide-fixed.hamburger_open #hamburger-content-wrapper {
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transform: translateX(0); }
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none; }
 html.hamburger-right.slide-move-whole.hamburger_open body:before, html.hamburger-right.slide-move-whole.hamburger_open body:after, html.hamburger-right.slide-move-whole.hamburger_open #hamburger-content-wrapper {
   -moz-transform: translateX(-350px);
   -ms-transform: translateX(-350px);
@@ -357,19 +368,115 @@ body:before, body:after {
   transition: transform 0.6s ease-in-out; }
 
 /**
+ * Compatibility. Since some themes use POSITION FIXED, and that doesn't play well with transforms, we provide
+ * a compatibility mode. Laggy animations (since it's not GPU accelerated), but they work.
+ */
+html.hamburger-compat {
+  /**
+   * Animation required styles
+   */ }
+  html.hamburger-compat #hamburger-menu-container {
+    -moz-transition: left 0.6s ease-in-out;
+    -o-transition: left 0.6s ease-in-out;
+    -webkit-transition: left 0.6s ease-in-out;
+    transition: left 0.6s ease-in-out;
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: -350px; }
+    html.hamburger-compat #hamburger-menu-container.open {
+      -moz-transform: none;
+      -ms-transform: none;
+      -webkit-transform: none;
+      transform: none;
+      left: 0; }
+  html.hamburger-compat #hamburger-content-wrapper {
+    -moz-transition: left 0.6s ease-in-out;
+    -o-transition: left 0.6s ease-in-out;
+    -webkit-transition: left 0.6s ease-in-out;
+    transition: left 0.6s ease-in-out;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    position: relative;
+    left: 0; }
+  html.hamburger-compat.hamburger_open body:before, html.hamburger-compat.hamburger_open body:after, html.hamburger-compat.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: 100px; }
+  html.hamburger-compat.slide-fixed.hamburger_open body:before, html.hamburger-compat.slide-fixed.hamburger_open body:after, html.hamburger-compat.slide-fixed.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: 0; }
+  html.hamburger-compat.slide-move-whole.hamburger_open body:before, html.hamburger-compat.slide-move-whole.hamburger_open body:after, html.hamburger-compat.slide-move-whole.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: 350px; }
+  html.hamburger-compat.hamburger-right #hamburger-menu-container {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: 350px; }
+    html.hamburger-compat.hamburger-right #hamburger-menu-container.open {
+      -moz-transform: none;
+      -ms-transform: none;
+      -webkit-transform: none;
+      transform: none;
+      left: 0; }
+  html.hamburger-compat.hamburger-right.hamburger_open body:before, html.hamburger-compat.hamburger-right.hamburger_open body:after, html.hamburger-compat.hamburger-right.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: -100px; }
+  html.hamburger-compat.hamburger-right.slide-fixed.hamburger_open body:before, html.hamburger-compat.hamburger-right.slide-fixed.hamburger_open body:after, html.hamburger-compat.hamburger-right.slide-fixed.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: 0; }
+  html.hamburger-compat.hamburger-right.slide-move-whole.hamburger_open body:before, html.hamburger-compat.hamburger-right.slide-move-whole.hamburger_open body:after, html.hamburger-compat.hamburger-right.slide-move-whole.hamburger_open #hamburger-content-wrapper {
+    -moz-transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
+    transform: none;
+    left: -350px; }
+  html.hamburger-compat body:before, html.hamburger-compat body:after {
+    -moz-transition: left 0.6s ease-in-out;
+    -o-transition: left 0.6s ease-in-out;
+    -webkit-transition: left 0.6s ease-in-out;
+    transition: left 0.6s ease-in-out; }
+
+/**
  * Fixed menu required styles
  */
 html.hamburger_fixed #hamburger-menu-container {
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transform: translateX(0); }
+  -moz-transform: none;
+  -ms-transform: none;
+  -webkit-transform: none;
+  transform: none;
+  left: 0; }
 html.hamburger_fixed #hamburger-button {
   display: none !important; }
 
 html.hamburger-left.hamburger_fixed #hamburger-content-wrapper {
   margin-left: 350px; }
 
+html.hamburger-right.hamburger_fixed #hamburger-menu-container {
+  left: auto; }
 html.hamburger-right.hamburger_fixed #hamburger-content-wrapper {
   margin-right: 350px; }
 
@@ -442,8 +549,12 @@ html.hamburger-right.hamburger_fixed #hamburger-content-wrapper {
   cursor: pointer; }
 
 .hamburger_open #hamburger-overlay {
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
+  top: -100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   opacity: 1; }
 
 body.admin-bar {
@@ -465,13 +576,18 @@ html.hamburger-stop-animation #hamburger-menu-container, html.hamburger-stop-ani
 /**
  * Only apply these fixes if the current theme is twenty-fifteen
  */
-html.hamburger-left.hamburger_fixed body.hamburger-twenty-fifteen:before {
+html.hamburger-twenty-fifteen.hamburger-left.hamburger_fixed body.hamburger-twenty-fifteen:before {
   margin-left: 350px; }
 
 @media screen and (min-width: 87.6875em) {
-  html.hamburger_fixed body.hamburger-twenty-fifteen:before {
+  html.hamburger-twenty-fifteen.hamburger_fixed body.hamburger-twenty-fifteen:before {
     width: -webkit-calc(45% - 350px);
     width: calc(45% - 350px); } }
 @media screen and (min-width: 59.6875em) {
-  html.hamburger_fixed body.hamburger-twenty-fifteen:before {
+  html.hamburger-twenty-fifteen.hamburger_fixed body.hamburger-twenty-fifteen:before {
     width: 21%; } }
+/**
+ * Only apply these fixes if the current theme is twenty-fourteen
+ */
+html.hamburger-twenty-fourteen {
+  margin-top: 0 !important; }

@@ -15,8 +15,13 @@ jQuery(document).ready(function($) {
 	if ( hamburger_vars.is_fixed === '1' ) {
 		$('html').addClass('hamburger_fixed');
 	}
+	// Compatibility mode
+	if ( hamburger_vars.compatibility_mode === 'compat' ) {
+		$('html').addClass('hamburger-compat');
+	}
 	$('html').addClass( 'slide-' + hamburger_vars.menu_slide_type )
-		.addClass( 'hamburger-' + hamburger_vars.menu_location );
+		.addClass( 'hamburger-' + hamburger_vars.menu_location )
+		.addClass( hamburger_vars.theme_name );
 	
 	
 	$('body').on('hamburger_open', function() {

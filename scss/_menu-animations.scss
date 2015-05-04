@@ -26,8 +26,12 @@ html.hamburger_open {
 html.slide-fixed {
 	&.hamburger_open {
 		body:before, body:after, #hamburger-content-wrapper {
-			@include transform(translateX(0));
+			@include transform(none);
 		}
+	}
+	#hamburger-content-wrapper {
+//		@include transition(transform .6s ease-in-out);
+		@include transform(none);
 	}
 }
 html.slide-move-whole {
@@ -64,7 +68,7 @@ html.hamburger-right {
 	&.slide-fixed {
 		&.hamburger_open {
 			body:before, body:after, #hamburger-content-wrapper {
-				@include transform(translateX(0));
+				@include transform(none);
 			}
 		}
 	}
@@ -89,12 +93,119 @@ body:before, body:after {
 }
 
 
+
+
+/**
+ * Compatibility. Since some themes use POSITION FIXED, and that doesn't play well with transforms, we provide
+ * a compatibility mode. Laggy animations (since it's not GPU accelerated), but they work.
+ */ 
+html.hamburger-compat {
+	// Animation required styles
+	#hamburger-menu-container {
+		@include transition(left .6s ease-in-out);
+//		@include transform(translateX(-350px));
+		@include transform(none);
+		left: -350px;
+		&.open {
+//			@include transform(translateX(0px));
+			@include transform(none);
+			left: 0;
+		}
+	}
+	#hamburger-content-wrapper {
+		@include transition(left .6s ease-in-out);
+//		@include transition(transform .6s ease-in-out);
+		@include transform(translateX(0));
+		@include transform(none);
+		position: relative;
+		left: 0;
+	}
+	&.hamburger_open {
+		body:before, body:after, #hamburger-content-wrapper {
+			@include transform(none);
+			left: 100px;
+//			@include transform(translateX(100px));
+		}
+	}
+
+	// Other animations
+	&.slide-fixed {
+		&.hamburger_open {
+			body:before, body:after, #hamburger-content-wrapper {
+//				@include transform(translateX(0));
+				@include transform(none);
+				left: 0;
+			}
+		}
+	}
+	&.slide-move-whole {
+		&.hamburger_open {
+			body:before, body:after, #hamburger-content-wrapper {
+//				@include transform(translateX(350px));
+				@include transform(none);
+				left: 350px;
+			}
+		}
+	}
+	
+	
+	&.hamburger-right {
+		#hamburger-menu-container {
+			@include transform(none);
+			left: 350px;
+			&.open {
+//				@include transform(translateX(0px));
+				@include transform(none);
+				left: 0;
+			}
+		}
+		&.hamburger_open {
+			body:before, body:after, #hamburger-content-wrapper {
+//				@include transform(translateX(-100px));
+				@include transform(none);
+				left: -100px;
+			}
+		}
+	
+
+		&.slide-fixed {
+			&.hamburger_open {
+				body:before, body:after, #hamburger-content-wrapper {
+//					@include transform(translateX(0));
+					@include transform(none);
+					left: 0;
+				}
+			}
+		}
+		&.slide-move-whole {
+			&.hamburger_open {
+				body:before, body:after, #hamburger-content-wrapper {
+//					@include transform(translateX(-350px));
+					@include transform(none);
+					left: -350px;
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Animation required styles
+	 */
+	body:before, body:after {
+//		@include transition(transform .6s ease-in-out);
+		@include transition(left .6s ease-in-out);
+	}
+}
+
+
+
 /**
  * Fixed menu required styles
  */
 html.hamburger_fixed {
 	#hamburger-menu-container {
-		@include transform(translateX(0));
+		@include transform(none);
+		left: 0;
 	}
 	#hamburger-button {
 		display: none !important;
@@ -109,6 +220,9 @@ html.hamburger-left {
 }
 html.hamburger-right {
 	&.hamburger_fixed {
+		#hamburger-menu-container {
+			left: auto;
+		}
 		#hamburger-content-wrapper {
 			margin-right: 350px;
 		}

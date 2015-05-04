@@ -251,6 +251,18 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
+		'name' => __( 'Slide-In Compatibility Mode', 'hamburgermenu' ),
+		'id' => 'menu_slide_type_compat',
+		'type' => 'select',
+		'options' => array(
+			'normal' => __( 'Use normal hardware accelerated methods', 'hamburgermenu' ),
+			'compat' => __( 'Use non-hardware accelerated methods (COMPATIBILITY MODE)', 'hamburgermenu' ),
+		),
+		'desc' => __( 'Sites that have <code>position: fixed</code> elements might have problems regarding the slide-in effects above. If some major elements in your site display incorrectly, select compatibility mode.', 'hamburgermenu' ),
+		'default' => 'normal',
+	) );
+	
+	$section->createOption( array(
 		'name' => __( 'Menu Open Method', 'hamburgermenu' ),
 		'id' => 'menu_open_method',
 		'type' => 'select',
