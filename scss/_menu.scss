@@ -63,6 +63,7 @@ body {
   .hamburger-widget-container {
 	  // widget contents should not change the spacing
 	  > * {
+		  box-sizing: border-box;
 		  > *:first-child {
 			  margin-top: 0 !important;
 		  }
@@ -75,8 +76,8 @@ body {
 	  	  list-style: none !important;
 	  	  li {
 	  	  	list-style: none !important;
-	  		padding-top: 5px;
-	  		padding-bottom: 5px;
+	  		padding-top: 10px;
+	  		padding-bottom: 10px;
 	  	  }
 	  }
   }
