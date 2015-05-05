@@ -48,6 +48,9 @@ class GambitHamburgerMenu {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'initCustomizer' ) );
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'includeCustomizerTemplate' ) );
 		add_filter( 'body_class', array( $this, 'addThemeClass' ) );
+		
+		add_filter( 'titan_checker_installation_notice', array( $this, 'titanInstallNotice' ) );
+		add_filter( 'titan_checker_activation_notice', array( $this, 'titanActivateNotice' ) );
 	}
 	
 	public function registerMenu() {
@@ -177,6 +180,15 @@ class GambitHamburgerMenu {
 		}
 		
 		return $classes;
+	}
+	
+	
+	public function titanInstallNotice( $notice ) {
+		return __( 'Hamburger Menu needs Titan Framework to be installed to work.', 'hamburgermenu' );
+	}
+	
+	public function titanActivateNotice( $notice ) {
+		return __( 'Hamburger Menu needs Titan Framework to be activated to work.', 'hamburgermenu' );
 	}
 	
 }
