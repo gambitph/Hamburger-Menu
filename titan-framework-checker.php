@@ -15,6 +15,8 @@
  * v1.7.4
  *		* Now integrates with TGM Plugin Activation - uses TGM instead of displaying
  *			our own admin notice
+ * v1.7.7
+ *		* Added filters to notices
  */
 
 
@@ -84,7 +86,7 @@ if ( ! class_exists( 'TitanFrameworkChecker' ) ) {
 				. apply_filters( 'titan_checker_installation_notice', __( "Titan Framework needs to be installed.", "default" ) )
 				. sprintf( " <a href='%s'>%s</a>",
 					admin_url( "plugin-install.php?tab=search&type=term&s=titan+framework" ),
-					__( "Click here to search for the plugin.", "default" ) )
+					apply_filters( 'titan_checker_search_plugin_notice', __( "Click here to search for the plugin.", "default" ) ) )
 				. "</strong></p></div>";
 		}
 
@@ -106,7 +108,7 @@ if ( ! class_exists( 'TitanFrameworkChecker' ) ) {
 				. apply_filters( 'titan_checker_activation_notice', __( "Titan Framework needs to be activated.", "default" ) )
 				. sprintf( " <a href='%s'>%s</a>",
 					admin_url( "plugins.php" ),
-					__( "Click here to go to the plugins page and activate it.", "default" ) )
+					apply_filter( 'titan_checker_activate_plugin_notice', __( "Click here to go to the plugins page and activate it.", "default" ) ) )
 				. "</strong></p></div>";
 		}
 		
