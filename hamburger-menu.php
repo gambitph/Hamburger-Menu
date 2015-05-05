@@ -23,8 +23,8 @@ defined( 'HAMBURGER_URL' ) or define( 'HAMBURGER_URL', plugin_dir_url( __FILE__ 
 defined( 'HAMBURGER_FILE' ) or define( 'HAMBURGER_FILE', __FILE__ );
 defined( 'HAMBURGER_STORE_URL' ) or define( 'HAMBURGER_STORE_URL', 'http://wphamburgermenu.com' );
 
-require_once( 'titan-framework/titan-framework-embedder.php' );
 require_once( 'titan-options.php' );
+require_once( 'titan-framework-checker.php' );
 
 class GambitHamburgerMenu {
 	
@@ -63,6 +63,10 @@ class GambitHamburgerMenu {
 	 */
 	public function hideFrontendMenu( $navMenu, $args ) {
 		
+		if ( ! class_exists( 'TitanFramework' ) ) {
+			return;
+		}
+		
 		$titan = TitanFramework::getInstance( 'hamburger_menu' );
 		$menuSlug = $titan->getOption( 'hide_menu' );
 		if ( ! empty( $menuSlug ) ) {
@@ -100,6 +104,11 @@ class GambitHamburgerMenu {
 	}
 	
 	public function passScriptVariables() {
+		
+		if ( ! class_exists( 'TitanFramework' ) ) {
+			return;
+		}
+		
 		$titan = TitanFramework::getInstance( 'hamburger_menu' );
 		
 		$themeName = '';
@@ -119,9 +128,14 @@ class GambitHamburgerMenu {
 			'theme_name' => $themeName,
 			'compatibility_mode' => $titan->getOption( 'menu_slide_type_compat' ),
 		) );
+		
 	}
 	
 	public function includeTemplates() {
+		if ( ! class_exists( 'TitanFramework' ) ) {
+			return;
+		}
+		
 		include_once( HAMBURGER_PATH . 'templates/icon.php' );
 		include_once( HAMBURGER_PATH . 'templates/menu.php' );
 	}
