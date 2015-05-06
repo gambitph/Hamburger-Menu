@@ -14,6 +14,8 @@ A customizeable side menu that can be used as a mobile-only as a replacement of 
 
 Hamburger Menu is a side menu that you can add to your site when viewed in mobile devices, or as a complete replacement for your current main website menu.
 
+A live demo can be found in our site at [wphamburgermenu.com](http://wphamburgermenu.com).
+
 Main Features:
 * Looks great and animates smoothly
 * Widget ready so you can add anything you like
@@ -52,9 +54,9 @@ Report bugs and help out in the code from the [Github repository](https://github
 1. Your new hamburger menu...
 2. ...or this one,
 3. ...or even this one,
-4. ...or this
-5. The Customizer settings
-6. Anoter preview of the Customizer settings
+4. The Customizer settings
+5. Anoter preview of the Customizer settings
+6. Overview of the Customizer settings panels
 
 == Frequently Asked Questions ==
 
