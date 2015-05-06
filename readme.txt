@@ -40,8 +40,10 @@ Report bugs and help out in the code from the [Github repository](https://github
 1. Head over to Plugins > Add New in the admin
 2. Search for "Hamburger Menu"
 3. Install & activate the plugin
-4. Create and set what menu to use for your Hamburger Menu at Appearance > Menus,
-5. Go to Appearance > Customize and head over to the Hamburger Menu panel and personalize the look of your menu
+4. A notice will say "Hamburger Menu needs Titan Framework to be installed to work", click on the link to search for Titan Framework.
+5. Install & activate Titan Framework
+6. Create and set what menu to use for your Hamburger Menu at Appearance > Menus,
+7. Go to Appearance > Customize and head over to the Hamburger Menu panel and personalize the look of your menu
 	
 **[Go PRO](http://wphamburgermenu.com), and add even more customization effects and options to your menu.**
 
