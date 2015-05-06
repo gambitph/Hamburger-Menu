@@ -15,7 +15,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Used for tracking the version used
-defined( 'HAMBURGER_VERSION' ) or define( 'HAMBURGER_VERSION', '1.1' );
+defined( 'HAMBURGER_VERSION' ) or define( 'HAMBURGER_VERSION', '1.0' );
 
 // Used for file includes
 defined( 'HAMBURGER_PATH' ) or define( 'HAMBURGER_PATH', trailingslashit( dirname( __FILE__ ) ) );
