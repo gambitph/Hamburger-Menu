@@ -29,7 +29,7 @@ $titan = TitanFramework::getInstance( 'hamburger_menu' );
 				?>
 				<div id="hamburger-logo-container">
 					<a href='<?php echo esc_url( home_url() ) ?>'>
-						<img class="logo" width="<?php echo esc_attr( $width ) ?>" src="<?php echo esc_url( $imageSrc ) ?>"/>
+						<img class="logo" width="<?php echo esc_attr( $width ) ?>" src="<?php echo esc_url( $imageSrc ) ?>" style="max-width: <?php echo esc_attr( $width ) ?>px !important"/>
 					</a>
 				</div>
 			<?php
