@@ -108,7 +108,7 @@ if ( ! class_exists( 'TitanFrameworkChecker' ) ) {
 				. apply_filters( 'titan_checker_activation_notice', __( "Titan Framework needs to be activated.", "default" ) )
 				. sprintf( " <a href='%s'>%s</a>",
 					admin_url( "plugins.php" ),
-					apply_filter( 'titan_checker_activate_plugin_notice', __( "Click here to go to the plugins page and activate it.", "default" ) ) )
+					apply_filters( 'titan_checker_activate_plugin_notice', __( "Click here to go to the plugins page and activate it.", "default" ) ) )
 				. "</strong></p></div>";
 		}
 		
