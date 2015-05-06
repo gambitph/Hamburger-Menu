@@ -19,3 +19,18 @@
 	right: 0;
 	opacity: 1;
 }
+
+/**
+ * Make sure our overlay covers the entire body
+ */
+#hamburger-content-wrapper {
+	position: relative;
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+		position: relative;
+		height: 1px;
+		background: transparent;
+	}
+}

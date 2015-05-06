@@ -111,10 +111,13 @@ body {
     padding-right: 30px; }
     #hamburger-menu-container #hamburger-menu-wrapper > * {
       box-sizing: border-box; }
+  #hamburger-menu-container a {
+    text-decoration: none; }
   #hamburger-menu-container #hamburger-menu a {
     display: block;
     padding-left: 30px;
-    padding-right: 30px; }
+    padding-right: 30px;
+    text-decoration: none; }
   #hamburger-menu-container #hamburger-menu .menu-item-has-children > a, #hamburger-menu-container #hamburger-menu .page_item_has_children > a {
     padding-right: 40px;
     position: relative; }
@@ -168,13 +171,17 @@ body {
   #hamburger-menu-container #hamburger-menu {
     padding-bottom: 30px; }
   #hamburger-menu-container #hamburger-logo-container a {
-    display: block; }
+    display: block;
+    text-decoration: none;
+    outline: none;
+    border: none; }
   #hamburger-menu-container #hamburger-logo-container img {
     margin-left: 50%;
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    width: 100% !important; }
   #hamburger-menu-container #hamburger-social-container {
     box-sizing: border-box;
     padding-left: 30px;
@@ -556,6 +563,19 @@ html.hamburger-right.hamburger_fixed #hamburger-content-wrapper {
   left: 0;
   right: 0;
   opacity: 1; }
+
+/**
+ * Make sure our overlay covers the entire body
+ */
+#hamburger-content-wrapper {
+  position: relative; }
+  #hamburger-content-wrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+    position: relative;
+    height: 1px;
+    background: transparent; }
 
 body.admin-bar {
   margin-top: -32px; }

@@ -24,11 +24,15 @@ body {
 		box-sizing: border-box;
 	}
   }
+  a {
+	  text-decoration: none;
+  }
   #hamburger-menu {
 	  a {
 		  display: block;
 		  padding-left: 30px;
 		  padding-right: 30px;
+		  text-decoration: none;
 	  }
 	  .menu-item-has-children > a, .page_item_has_children > a {
 		  padding-right: 40px;
@@ -105,10 +109,14 @@ body {
   #hamburger-logo-container {
 	  a {
 		  display: block;
+		  text-decoration: none;
+		  outline: none;
+		  border: none;
 	  }
 	  img {
 	    margin-left: 50%;
 	    @include transform(translateX(-50%));
+		width: 100% !important;
 	  }
   }
   #hamburger-social-container {
