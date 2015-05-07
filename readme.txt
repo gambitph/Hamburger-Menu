@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A customizeable side menu that can be used as a mobile-only as a replacement of your site's main menu.
+A responsive customizeable side menu that can be used as a mobile-only as a replacement of your site's main menu.
 
 == Description ==
 
@@ -17,6 +17,7 @@ Hamburger Menu is a side menu that you can add to your site when viewed in mobil
 A live demo can be found in our site at [wphamburgermenu.com](http://wphamburgermenu.com).
 
 Main Features:
+
 * Looks great and animates smoothly
 * Widget ready so you can add anything you like
 * Use as a mobile menu or replace your site's main menu
