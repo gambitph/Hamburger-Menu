@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A responsive customizable side menu that can be used as a mobile-only as a replacement of your site's main menu.
+A responsive customizable menu that can be used as a mobile-only as a replacement of your site's main menu.
 
 == Description ==
 
