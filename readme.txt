@@ -8,7 +8,7 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A responsive customizeable side menu that can be used as a mobile-only as a replacement of your site's main menu.
+A responsive customizable side menu that can be used as a mobile-only as a replacement of your site's main menu.
 
 == Description ==
 
@@ -21,7 +21,7 @@ Main Features:
 * Looks great and animates smoothly
 * Widget ready so you can add anything you like
 * Use as a mobile menu or replace your site's main menu
-* Highly customizeable via the Customizer:
+* Highly customizable via the Customizer:
 	* Adjust all the colors from the background to the link hover colors
 	* Adjust the colors, location and size of the menu icon
 	* Add a high res logo on the top of the menu
