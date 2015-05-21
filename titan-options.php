@@ -384,10 +384,10 @@ function hamburger_create_options() {
 				'none' => __( 'None', 'hamburgermenu' ),
 				'fadein' => __( 'Highlight fade in', 'hamburgermenu' ),
 				'tab' => __( 'Highlight tab', 'hamburgermenu' ),
-				'!grow-left' => __( 'Highlight grow from the left (PRO)', 'hamburgermenu' ),
-				'!grow-right' => __( 'Highlight grow from the right (PRO)', 'hamburgermenu' ),
-				'!grow-top' => __( 'Highlight grow from the top (PRO)', 'hamburgermenu' ),
-				'!grow-bottom' => __( 'Highlight grow from the bottom (PRO)', 'hamburgermenu' ),
+				'grow-left' => __( 'Highlight grow from the left', 'hamburgermenu' ),
+				'grow-right' => __( 'Highlight grow from the right ', 'hamburgermenu' ),
+				'grow-top' => __( 'Highlight grow from the top', 'hamburgermenu' ),
+				'grow-bottom' => __( 'Highlight grow from the bottom', 'hamburgermenu' ),
 			),
 		) );
 	}
@@ -548,15 +548,5 @@ function hamburger_create_options() {
 	    'name' => __( 'Social Icons', 'hamburgermenu' ),
 		'desc' => __( 'Display your social links as icons that appear on the bottom of your hamburger menu. Enter your social links in the fields below.', 'hamburgermenu' ),
 	) );
-	
-	if ( ! apply_filters( 'hamburger_social_links_options', false, $section ) ) {
-		$section->createOption( array(
-			'id' => 'social_dummy',
-			'hidden' => true,
-			'type' => 'note',
-			'desc' => __( 'This feature is only available in the PRO version', 'hamburgermenu' ) . '<br><a href="' . HAMBURGER_STORE_URL . '" class="button button-primary" target="_blank" style="margin-top: 5px">' . __( 'Go PRO now to enable social icons', 'hamburgermenu' ) . '</a>',
-			'default' => '',
-		) );
-	}
 	
 }

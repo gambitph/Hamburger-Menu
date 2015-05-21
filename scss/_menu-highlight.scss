@@ -54,6 +54,54 @@
 		}
 	}
 }
+#hamburger-menu-container.highlight-effect-grow-left #hamburger-menu li {
+	a, a:link, a:visited {
+		&:before {
+			@include transform(translateX(-100%));
+			opacity: 1;
+		}
+		&:hover:before {
+			@include transform(translateX(0));
+			opacity: 1;
+		}
+	}
+}
+#hamburger-menu-container.highlight-effect-grow-right #hamburger-menu li {
+	a, a:link, a:visited {
+		&:before {
+			@include transform(translateX(100%));
+			opacity: 1;
+		}
+		&:hover:before {
+			@include transform(translateX(0));
+			opacity: 1;
+		}
+	}
+}
+#hamburger-menu-container.highlight-effect-grow-top #hamburger-menu li {
+	a, a:link, a:visited {
+		&:before {
+			@include transform(translateY(-100%));
+			opacity: 1;
+		}
+		&:hover:before {
+			@include transform(translateY(0));
+			opacity: 1;
+		}
+	}
+}
+#hamburger-menu-container.highlight-effect-grow-bottom #hamburger-menu li {
+	a, a:link, a:visited {
+		&:before {
+			@include transform(translateY(100%));
+			opacity: 1;
+		}
+		&:hover:before {
+			@include transform(translateY(0));
+			opacity: 1;
+		}
+	}
+}
 // This is overridden by a calculated value of +15px in titan-options
 #hamburger-menu-container.highlight-grow #hamburger-menu li {
 	a, a:link, a:visited {

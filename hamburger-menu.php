@@ -102,8 +102,7 @@ class GambitHamburgerMenu {
 	public function initCustomizer() {
 		// Needed by templates
 		wp_enqueue_script( 'wp-util' );
-		
-		wp_enqueue_script( 'hamburger-customizer', HAMBURGER_URL . 'js/min/customizer-min.js', array( 'jquery' ), HAMBURGER_VERSION, true );
+
 	}
 	
 	public function passScriptVariables() {
@@ -141,10 +140,6 @@ class GambitHamburgerMenu {
 		
 		include_once( HAMBURGER_PATH . 'templates/icon.php' );
 		include_once( HAMBURGER_PATH . 'templates/menu.php' );
-	}
-	
-	public function includeCustomizerTemplate() {
-		include_once( HAMBURGER_PATH . 'templates/go-pro.php' );
 	}
 	
 	public function initWidgets() {
