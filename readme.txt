@@ -30,8 +30,6 @@ Main Features:
 * Responsive, flick the menu to close it
 * Intuitive and very easy to use
 	
-**[Go PRO](http://wphamburgermenu.com), and add even more customization effects and options to your menu.**
-
 = Contributing =
 
 *Contributions are welcome at the [Github repository](https://github.com/gambitph/Hamburger-Menu/)*
@@ -48,8 +46,6 @@ Report bugs and help out in the code from the [Github repository](https://github
 6. Create and set what menu to use for your Hamburger Menu at Appearance > Menus,
 7. Go to Appearance > Customize and head over to the Hamburger Menu panel and personalize the look of your menu
 	
-**[Go PRO](http://wphamburgermenu.com), and add even more customization effects and options to your menu.**
-
 == Screenshots ==
 
 1. Your new hamburger menu...

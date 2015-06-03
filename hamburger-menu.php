@@ -1,13 +1,13 @@
 <?php
 /**
 * Plugin Name: Hamburger Menu by Gambit
-* Plugin URI: https://github.com/gambitph/Hamburger-Menu
+* Plugin URI: http://codecanyon.net/user/gambittech/portfolio
 * Description: A mobile hamburger menu that displays a cool side menu. This can serve as a replacement menu for your theme.
 * Version: 1.0
 * Author: Benjamin Intal - Gambit Technologies Inc
 * Author URI: http://gambit.ph
 * License: GPL2
-* Text Domain: hamburgermenu
+* Text Domain: hamburger-menu
 * Domain Path: /languages
 */
 
@@ -16,6 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Used for tracking the version used
 defined( 'HAMBURGER_VERSION' ) or define( 'HAMBURGER_VERSION', '1.0' );
+
+defined( 'GAMBIT_HAMBURGER_PLUGIN' ) or define( 'GAMBIT_HAMBURGER_PLUGIN', 'hamburger-menu' );
 
 // Used for file includes
 defined( 'HAMBURGER_PATH' ) or define( 'HAMBURGER_PATH', trailingslashit( dirname( __FILE__ ) ) );
@@ -41,6 +43,19 @@ if ( ! class_exists('GambitHamburgerMenu') ) {
 		);
 	
 		function __construct() {
+
+			// Activation instructions & CodeCanyon rating notices
+			require_once( 'class-rate-notice.php' );
+			if ( class_exists( 'GambitRateNotice' ) ) {
+				new GambitRateNotice( array(
+					'file' => __FILE__,
+					'class' => __CLASS__,
+
+					// Displays simple usage instructions.
+					'help_message' => __( 'The Hamburger Menu replaces your regular menu with a sleek touch-ready menu. It is easily configurable like a regular menu and is sure to wow visitors without the need to learn something new.', GAMBIT_HAMBURGER_PLUGIN ),
+				) );
+			}
+			
 			add_action( 'after_setup_theme', array( $this, 'registerMenu' ) );
 			add_filter( 'wp_nav_menu', array( $this, 'hideFrontendMenu' ), 10, 2 );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueueFrontendScripts' ) );
@@ -53,12 +68,33 @@ if ( ! class_exists('GambitHamburgerMenu') ) {
 		
 			add_filter( 'titan_checker_installation_notice', array( $this, 'titanInstallNotice' ) );
 			add_filter( 'titan_checker_activation_notice', array( $this, 'titanActivateNotice' ) );
+			
+			// Our translations
+			add_action( 'plugins_loaded', array( $this, 'loadTextDomain' ), 1 );
 		}
-	
+
+
+		/**
+		 * Loads the replacement menu
+		 *
+		 * @return	void
+		 * @since	1.0
+		 */	
 		public function registerMenu() {
 			register_nav_menus( array(
-				'hamburger' => __( 'Hamburger Menu', 'hamburgermenu' ),
+				'hamburger' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
 			) );
+		}
+
+
+		/**
+		 * Loads the translations
+		 *
+		 * @return	void
+		 * @since	1.0
+		 */
+		public function loadTextDomain() {
+			load_plugin_textdomain( GAMBIT_HAMBURGER_PLUGIN, false, basename( dirname( __FILE__ ) ) . '/languages/' );
 		}
 	
 	
@@ -104,8 +140,7 @@ if ( ! class_exists('GambitHamburgerMenu') ) {
 		public function initCustomizer() {
 			// Needed by templates
 			wp_enqueue_script( 'wp-util' );
-		
-			wp_enqueue_script( 'hamburger-customizer', HAMBURGER_URL . 'js/min/customizer-min.js', array( 'jquery' ), HAMBURGER_VERSION, true );
+
 		}
 	
 		public function passScriptVariables() {
@@ -145,24 +180,20 @@ if ( ! class_exists('GambitHamburgerMenu') ) {
 			include_once( HAMBURGER_PATH . 'templates/menu.php' );
 		}
 	
-		public function includeCustomizerTemplate() {
-			include_once( HAMBURGER_PATH . 'templates/go-pro.php' );
-		}
-	
 		public function initWidgets() {
 			register_sidebar( array(
-				'name' => __( 'Hamburger Menu Bottom Widgets', 'hamburgermenu' ),
+				'name' => __( 'Hamburger Menu Bottom Widgets', GAMBIT_HAMBURGER_PLUGIN ),
 				'id' => 'hamburger-bottom-widgets',
-				'description' => __( 'Widgets here appear in the bottom area of the hamburger menu.', 'hamburgermenu' ),
+				'description' => __( 'Widgets here appear in the bottom area of the hamburger menu.', GAMBIT_HAMBURGER_PLUGIN ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 				'after_widget' => '</aside>',
 				'before_title' => '<h4 class="widget-title">',
 				'after_title' => '</h4>',
 			) );
 			register_sidebar( array(
-				'name' => __( 'Hamburger Menu Top Widgets', 'hamburgermenu' ),
+				'name' => __( 'Hamburger Menu Top Widgets', GAMBIT_HAMBURGER_PLUGIN ),
 				'id' => 'hamburger-top-widgets',
-				'description' => __( 'Widgets here appear in the top area of the hamburger menu.', 'hamburgermenu' ),
+				'description' => __( 'Widgets here appear in the top area of the hamburger menu.', GAMBIT_HAMBURGER_PLUGIN ),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 				'after_widget' => '</aside>',
 				'before_title' => '<h4 class="widget-title">',
@@ -186,14 +217,14 @@ if ( ! class_exists('GambitHamburgerMenu') ) {
 	
 	
 		public function titanInstallNotice( $notice ) {
-			return __( 'Hamburger Menu needs Titan Framework to be installed to work.', 'hamburgermenu' );
+			return __( 'Hamburger Menu needs Titan Framework to be installed to work.', GAMBIT_HAMBURGER_PLUGIN );
 		}
 	
 		public function titanActivateNotice( $notice ) {
-			return __( 'Hamburger Menu needs Titan Framework to be activated to work.', 'hamburgermenu' );
+			return __( 'Hamburger Menu needs Titan Framework to be activated to work.', GAMBIT_HAMBURGER_PLUGIN );
 		}
 	
 	}
-
-	new GambitHamburgerMenu();
 }
+
+new GambitHamburgerMenu();

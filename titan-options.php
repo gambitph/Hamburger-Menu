@@ -18,8 +18,8 @@ function hamburger_create_options() {
 	
 	
 	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'General', 'hamburgermenu' ),
+		'panel' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
+	    'name' => __( 'General', GAMBIT_HAMBURGER_PLUGIN ),
 		'panel_desc' => '',
 	) );
 	
@@ -31,10 +31,10 @@ function hamburger_create_options() {
 	}
 	
 	$section->createOption( array(
-		'name' => __( 'Show Menu When Below Width', 'hamburgermenu' ),
+		'name' => __( 'Show Menu When Below Width', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'show_below_width',
 		'type' => 'number',
-		'desc' => __( 'Only show the hamburger menu when the screen is below this width. Leave as 0 to always show the menu.', 'hamburgermenu' ),
+		'desc' => __( 'Only show the hamburger menu when the screen is below this width. Leave as 0 to always show the menu.', GAMBIT_HAMBURGER_PLUGIN ),
 		'default' => '0',
 		'min' => '0',
 		'max' => '2000',
@@ -42,19 +42,19 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Hide Primary Menu When Hamburger is Visible', 'hamburgermenu' ),
+		'name' => __( 'Hide Primary Menu When Hamburger is Visible', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'hide_menu',
 		'type' => 'select',
-		'desc' => __( 'If you intend to replace your main menu with Hamburger Menu, select the menu that you want hidden from your frontend. This works in conjuction with the above setting, the menu here will only get hidden if the hamburger is visible.', 'hamburgermenu' ),
+		'desc' => __( 'If you intend to replace your main menu with Hamburger Menu, select the menu that you want hidden from your frontend. This works in conjuction with the above setting, the menu here will only get hidden if the hamburger is visible.', GAMBIT_HAMBURGER_PLUGIN ),
 		'options' => $options,
 		'default' => '',
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Hide These Elements When Hamburger is Visible (Put Selectors)', 'hamburgermenu' ),
+		'name' => __( 'Hide These Elements When Hamburger is Visible (Put Selectors)', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'hide_selectors',
 		'type' => 'text',
-		'desc' => __( 'Sometimes, the above setting for hiding menus won\'t be enough and you might still see a menu button that should be hidden. If that is the case, inspect your website and put the css selectors of the elements to hide here.', 'hamburgermenu' ),
+		'desc' => __( 'Sometimes, the above setting for hiding menus won\'t be enough and you might still see a menu button that should be hidden. If that is the case, inspect your website and put the css selectors of the elements to hide here.', GAMBIT_HAMBURGER_PLUGIN ),
 		'default' => 'header .secondary-toggle',
 	) );
 	
@@ -62,26 +62,26 @@ function hamburger_create_options() {
 
 	
 	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Icon & Menu Location', 'hamburgermenu' ),
+		'panel' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
+	    'name' => __( 'Icon & Menu Location', GAMBIT_HAMBURGER_PLUGIN ),
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Menu Location', 'hamburgermenu' ),
+		'name' => __( 'Menu Location', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_location',
 		'type' => 'select',
 		'options' => array(
-			'left' => __( 'Left', 'hamburgermenu' ),
-			'right' => __( 'Right', 'hamburgermenu' ),
+			'left' => __( 'Left', GAMBIT_HAMBURGER_PLUGIN ),
+			'right' => __( 'Right', GAMBIT_HAMBURGER_PLUGIN ),
 		),
 		'default' => 'left',
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Icon Top Offset', 'hamburgermenu' ),
+		'name' => __( 'Icon Top Offset', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'icon_top',
 		'type' => 'number',
-		'desc' => __( 'The vertical offset of the location of the icon from the top of the site, in pixels', 'hamburgermenu' ),
+		'desc' => __( 'The vertical offset of the location of the icon from the top of the site, in pixels', GAMBIT_HAMBURGER_PLUGIN ),
 		'default' => '30',
 		'min' => '0',
 		'max' => '300',
@@ -90,10 +90,10 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Icon Left/Right Offset', 'hamburgermenu' ),
+		'name' => __( 'Icon Left/Right Offset', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'icon_left',
 		'type' => 'number',
-		'desc' => __( 'The horizontal offset of the location of the icon from the left/right of the site, in pixels', 'hamburgermenu' ),
+		'desc' => __( 'The horizontal offset of the location of the icon from the left/right of the site, in pixels', GAMBIT_HAMBURGER_PLUGIN ),
 		'default' => '30',
 		'min' => '0',
 		'max' => '300',
@@ -105,12 +105,12 @@ function hamburger_create_options() {
 
 	
 	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Icon Colors', 'hamburgermenu' ),
+		'panel' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
+	    'name' => __( 'Icon Colors', GAMBIT_HAMBURGER_PLUGIN ),
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Hamburger Bar Thickness', 'hamburgermenu' ),
+		'name' => __( 'Hamburger Bar Thickness', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'icon_bar_thickness',
 		'type' => 'number',
 		'default' => '4',
@@ -121,7 +121,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Hamburger Bar Color', 'hamburgermenu' ),
+		'name' => __( 'Hamburger Bar Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'icon_bar_color',
 		'type' => 'color',
 		'default' => '#333333',
@@ -129,7 +129,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Hamburger Icon Size', 'hamburgermenu' ),
+		'name' => __( 'Hamburger Icon Size', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'icon_size',
 		'type' => 'number',
 		'default' => '30',
@@ -140,7 +140,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Hamburger Icon Padding', 'hamburgermenu' ),
+		'name' => __( 'Hamburger Icon Padding', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'icon_padding',
 		'type' => 'number',
 		'default' => '20',
@@ -151,7 +151,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Background Color', 'hamburgermenu' ),
+		'name' => __( 'Background Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'icon_bg_color',
 		'type' => 'color',
 		'default' => '',
@@ -159,7 +159,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Border Thickness', 'hamburgermenu' ),
+		'name' => __( 'Border Thickness', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'icon_border_thickness',
 		'type' => 'number',
 		'default' => '4',
@@ -170,7 +170,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Border Color', 'hamburgermenu' ),
+		'name' => __( 'Border Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'icon_border_color',
 		'type' => 'color',
 		'default' => '#333333',
@@ -178,7 +178,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Hamburger Icon Opacity', 'hamburgermenu' ),
+		'name' => __( 'Hamburger Icon Opacity', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'icon_opacity',
 		'type' => 'number',
 		'default' => '1',
@@ -192,12 +192,12 @@ function hamburger_create_options() {
 	
 	
 	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Overlay Colors', 'hamburgermenu' ),
+		'panel' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
+	    'name' => __( 'Overlay Colors', GAMBIT_HAMBURGER_PLUGIN ),
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Overlay Color', 'hamburgermenu' ),
+		'name' => __( 'Overlay Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'overlay_color',
 		'type' => 'color',
 		'default' => '#000000',
@@ -205,7 +205,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Overlay Opacity', 'hamburgermenu' ),
+		'name' => __( 'Overlay Opacity', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'overlay_opacity',
 		'type' => 'number',
 		'default' => '0.3',
@@ -219,56 +219,56 @@ function hamburger_create_options() {
 	
 	
 	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Menu Style', 'hamburgermenu' ),
+		'panel' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
+	    'name' => __( 'Menu Style', GAMBIT_HAMBURGER_PLUGIN ),
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'The Type of Menu to Display', 'hamburgermenu' ),
+		'name' => __( 'The Type of Menu to Display', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_type',
 		'type' => 'select',
-		'desc' => __( 'Choose your menu flavor:<br>Basic - Plain menu<br>Basic Fixed - Basic & fixed on the side<br>Designed (PRO) - With descriptions & icons<br>Designed Fixed (PRO) - Designed & fixed on the side<br>Full Screen (PRO) - A full screen basic menu', 'hamburgermenu' ),
+		'desc' => __( 'Choose your menu flavor:<br>Basic - Plain menu<br>Basic Fixed - Basic & fixed on the side<br>Designed (PRO) - With descriptions & icons<br>Designed Fixed (PRO) - Designed & fixed on the side<br>Full Screen (PRO) - A full screen basic menu', GAMBIT_HAMBURGER_PLUGIN ),
 		'options' => array(
-			'basic' => __( 'Basic', 'hamburgermenu' ),
-			'basic-fixed' => __( 'Basic Fixed', 'hamburgermenu' ),
-			'!designed' => __( 'Designed (PRO)', 'hamburgermenu' ),
-			'!designed-fixed' => __( 'Designed Fixed (PRO)', 'hamburgermenu' ),
-			'!fullscreen' => __( 'Full Screen (PRO)', 'hamburgermenu' ),
+			'basic' => __( 'Basic', GAMBIT_HAMBURGER_PLUGIN ),
+			'basic-fixed' => __( 'Basic Fixed', GAMBIT_HAMBURGER_PLUGIN ),
+			'!designed' => __( 'Designed (PRO)', GAMBIT_HAMBURGER_PLUGIN ),
+			'!designed-fixed' => __( 'Designed Fixed (PRO)', GAMBIT_HAMBURGER_PLUGIN ),
+			'!fullscreen' => __( 'Full Screen (PRO)', GAMBIT_HAMBURGER_PLUGIN ),
 		),
 		'default' => 'basic',
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Menu Slide-In Type', 'hamburgermenu' ),
+		'name' => __( 'Menu Slide-In Type', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_slide_type',
 		'type' => 'select',
 		'options' => array(
-			'move-whole' => __( 'Move Whole Page', 'hamburgermenu' ),
-			'move-partial' => __( 'Move Page Partially', 'hamburgermenu' ),
-			'fixed' => __( 'Page is Fixed', 'hamburgermenu' ),
+			'move-whole' => __( 'Move Whole Page', GAMBIT_HAMBURGER_PLUGIN ),
+			'move-partial' => __( 'Move Page Partially', GAMBIT_HAMBURGER_PLUGIN ),
+			'fixed' => __( 'Page is Fixed', GAMBIT_HAMBURGER_PLUGIN ),
 		),
 		'default' => 'fixed',
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Slide-In Compatibility Mode', 'hamburgermenu' ),
+		'name' => __( 'Slide-In Compatibility Mode', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_slide_type_compat',
 		'type' => 'select',
 		'options' => array(
-			'normal' => __( 'Use normal hardware accelerated methods', 'hamburgermenu' ),
-			'compat' => __( 'Use non-hardware accelerated methods (COMPATIBILITY MODE)', 'hamburgermenu' ),
+			'normal' => __( 'Use normal hardware accelerated methods', GAMBIT_HAMBURGER_PLUGIN ),
+			'compat' => __( 'Use non-hardware accelerated methods (COMPATIBILITY MODE)', GAMBIT_HAMBURGER_PLUGIN ),
 		),
-		'desc' => __( 'Sites that have <code>position: fixed</code> elements might have problems regarding the slide-in effects above. If some major elements in your site display incorrectly, select compatibility mode.', 'hamburgermenu' ),
+		'desc' => __( 'Sites that have <code>position: fixed</code> elements might have problems regarding the slide-in effects above. If some major elements in your site display incorrectly, select compatibility mode.', GAMBIT_HAMBURGER_PLUGIN ),
 		'default' => 'normal',
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Menu Open Method', 'hamburgermenu' ),
+		'name' => __( 'Menu Open Method', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_open_method',
 		'type' => 'select',
 		'options' => array(
-			'click' => __( 'Open on Click', 'hamburgermenu' ),
-			'!hover' => __( 'Open on Hover (PRO)', 'hamburgermenu' ),
+			'click' => __( 'Open on Click', GAMBIT_HAMBURGER_PLUGIN ),
+			'!hover' => __( 'Open on Hover (PRO)', GAMBIT_HAMBURGER_PLUGIN ),
 		),
 		'default' => 'click',
 	) );
@@ -277,12 +277,12 @@ function hamburger_create_options() {
 	
 	
 	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Menu Colors & Styles', 'hamburgermenu' ),
+		'panel' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
+	    'name' => __( 'Menu Colors & Styles', GAMBIT_HAMBURGER_PLUGIN ),
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Background Color', 'hamburgermenu' ),
+		'name' => __( 'Background Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_bg_color',
 		'type' => 'color',
 		'default' => '#212121',
@@ -296,7 +296,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Border Color', 'hamburgermenu' ),
+		'name' => __( 'Border Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_border_color',
 		'type' => 'color',
 		'default' => '#161616',
@@ -305,7 +305,7 @@ function hamburger_create_options() {
 
 	
 	$section->createOption( array(
-		'name' => __( 'Menu Top Level Background Color', 'hamburgermenu' ),
+		'name' => __( 'Menu Top Level Background Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_topmenu_bg_color',
 		'type' => 'color',
 		'default' => '#212121',
@@ -313,7 +313,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Title Text Color', 'hamburgermenu' ),
+		'name' => __( 'Title Text Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_title_color',
 		'type' => 'color',
 		'default' => '#939393',
@@ -322,7 +322,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Normal Text Color', 'hamburgermenu' ),
+		'name' => __( 'Normal Text Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_text_color',
 		'type' => 'color',
 		'default' => '#939393',
@@ -336,7 +336,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Text Link Color', 'hamburgermenu' ),
+		'name' => __( 'Text Link Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_link_color',
 		'type' => 'color',
 		'default' => '#22a7f0',
@@ -350,7 +350,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Text Link Hover Color', 'hamburgermenu' ),
+		'name' => __( 'Text Link Hover Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_link_hover_color',
 		'type' => 'color',
 		'default' => '#19b5fe',
@@ -366,7 +366,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Submenu Arrow Color', 'hamburgermenu' ),
+		'name' => __( 'Submenu Arrow Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_arrow_color',
 		'type' => 'color',
 		'default' => '#22a7f0',
@@ -376,24 +376,24 @@ function hamburger_create_options() {
 	
 	if ( ! apply_filters( 'hamburger_menu_hover_options', false, $section ) ) {
 		$section->createOption( array(
-			'name' => __( 'Menu Link Hover Style', 'hamburgermenu' ),
+			'name' => __( 'Menu Link Hover Style', GAMBIT_HAMBURGER_PLUGIN ),
 			'id' => 'menu_link_highlight_style',
 			'type' => 'select',
 			'default' => 'glow',
 			'options' => array(
-				'none' => __( 'None', 'hamburgermenu' ),
-				'fadein' => __( 'Highlight fade in', 'hamburgermenu' ),
-				'tab' => __( 'Highlight tab', 'hamburgermenu' ),
-				'!grow-left' => __( 'Highlight grow from the left (PRO)', 'hamburgermenu' ),
-				'!grow-right' => __( 'Highlight grow from the right (PRO)', 'hamburgermenu' ),
-				'!grow-top' => __( 'Highlight grow from the top (PRO)', 'hamburgermenu' ),
-				'!grow-bottom' => __( 'Highlight grow from the bottom (PRO)', 'hamburgermenu' ),
+				'none' => __( 'None', GAMBIT_HAMBURGER_PLUGIN ),
+				'fadein' => __( 'Highlight fade in', GAMBIT_HAMBURGER_PLUGIN ),
+				'tab' => __( 'Highlight tab', GAMBIT_HAMBURGER_PLUGIN ),
+				'grow-left' => __( 'Highlight grow from the left', GAMBIT_HAMBURGER_PLUGIN ),
+				'grow-right' => __( 'Highlight grow from the right ', GAMBIT_HAMBURGER_PLUGIN ),
+				'grow-top' => __( 'Highlight grow from the top', GAMBIT_HAMBURGER_PLUGIN ),
+				'grow-bottom' => __( 'Highlight grow from the bottom', GAMBIT_HAMBURGER_PLUGIN ),
 			),
 		) );
 	}
 	
 	$section->createOption( array(
-		'name' => __( 'Menu Link Hover Highlight', 'hamburgermenu' ),
+		'name' => __( 'Menu Link Hover Highlight', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_link_highlight_color',
 		'type' => 'color',
 		'default' => '#2f2f2f',
@@ -401,18 +401,18 @@ function hamburger_create_options() {
 	) );
 
 	$section->createOption( array(
-		'name' => __( 'Menu Link Accordion-Like Grow Effect', 'hamburgermenu' ),
+		'name' => __( 'Menu Link Accordion-Like Grow Effect', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_link_highlight_grow_style',
 		'type' => 'select',
 		'default' => 'none',
 		'options' => array(
-			'none' => __( 'None', 'hamburgermenu' ),
-			'grow' => __( 'Grow Taller', 'hamburgermenu' ),
+			'none' => __( 'None', GAMBIT_HAMBURGER_PLUGIN ),
+			'grow' => __( 'Grow Taller', GAMBIT_HAMBURGER_PLUGIN ),
 		),
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Menu Link Paddings', 'hamburgermenu' ),
+		'name' => __( 'Menu Link Paddings', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_link_padding',
 		'type' => 'number',
 		'default' => '15',
@@ -435,25 +435,25 @@ function hamburger_create_options() {
 	
 	
 	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Submenu Colors & Styles', 'hamburgermenu' ),
+		'panel' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
+	    'name' => __( 'Submenu Colors & Styles', GAMBIT_HAMBURGER_PLUGIN ),
 	) );
 
 	
 	$section->createOption( array(
-		'name' => __( 'Submenu Display Type', 'hamburgermenu' ),
+		'name' => __( 'Submenu Display Type', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_submenu_type',
 		'type' => 'select',
 		'default' => 'in-menu',
 		'options' => array(
-			'in-menu' => __( 'Inside the main menu', 'hamburgermenu' ),
-			'!side-menu' => __( 'On a new panel on the side (PRO)', 'hamburgermenu' ),
+			'in-menu' => __( 'Inside the main menu', GAMBIT_HAMBURGER_PLUGIN ),
+			'!side-menu' => __( 'On a new panel on the side (PRO)', GAMBIT_HAMBURGER_PLUGIN ),
 		),
 	) );
 
 	
 	$section->createOption( array(
-		'name' => __( 'Submenu Level 1 Background Color', 'hamburgermenu' ),
+		'name' => __( 'Submenu Level 1 Background Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_submenu1_bg_color',
 		'type' => 'color',
 		'default' => '#1c1c1c',
@@ -462,7 +462,7 @@ function hamburger_create_options() {
 
 	
 	$section->createOption( array(
-		'name' => __( 'Submenu Level 2 Background Color', 'hamburgermenu' ),
+		'name' => __( 'Submenu Level 2 Background Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_submenu2_bg_color',
 		'type' => 'color',
 		'default' => '#141414',
@@ -471,7 +471,7 @@ function hamburger_create_options() {
 
 	
 	$section->createOption( array(
-		'name' => __( 'Submenu Level 3+ Background Color', 'hamburgermenu' ),
+		'name' => __( 'Submenu Level 3+ Background Color', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_submenu3_bg_color',
 		'type' => 'color',
 		'default' => '#111111',
@@ -482,12 +482,12 @@ function hamburger_create_options() {
 	
 	
 	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Menu Fonts', 'hamburgermenu' ),
+		'panel' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
+	    'name' => __( 'Menu Fonts', GAMBIT_HAMBURGER_PLUGIN ),
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Menu & Headings Font', 'hamburgermenu' ),
+		'name' => __( 'Menu & Headings Font', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_headings_font',
 		'type' => 'font',
 		'show_color' => false,
@@ -502,7 +502,7 @@ function hamburger_create_options() {
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Normal Text Font', 'hamburgermenu' ),
+		'name' => __( 'Normal Text Font', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'menu_text_font',
 		'type' => 'font',
 		'show_color' => false,
@@ -518,23 +518,23 @@ function hamburger_create_options() {
 	
 	
 	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Menu Logo', 'hamburgermenu' ),
+		'panel' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
+	    'name' => __( 'Menu Logo', GAMBIT_HAMBURGER_PLUGIN ),
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Top Logo', 'hamburgermenu' ),
+		'name' => __( 'Top Logo', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'logo_image',
 		'type' => 'upload',
-		'desc' => __( 'Select a logo here if you want to display a logo on the top part of your menu.', 'hamburgermenu' ),
+		'desc' => __( 'Select a logo here if you want to display a logo on the top part of your menu.', GAMBIT_HAMBURGER_PLUGIN ),
 		'default' => '',
 	) );
 	
 	$section->createOption( array(
-		'name' => __( 'Logo Width', 'hamburgermenu' ),
+		'name' => __( 'Logo Width', GAMBIT_HAMBURGER_PLUGIN ),
 		'id' => 'logo_width',
 		'type' => 'number',
-		'desc' => __( 'Your logo will be resized to this width in pixels. This is useful for retina devices, upload a large image above, then display them in a smaller size here.', 'hamburgermenu' ),
+		'desc' => __( 'Your logo will be resized to this width in pixels. This is useful for retina devices, upload a large image above, then display them in a smaller size here.', GAMBIT_HAMBURGER_PLUGIN ),
 		'default' => '150',
 		'min' => '0',
 		'max' => '350',
@@ -544,19 +544,9 @@ function hamburger_create_options() {
 	
 
 	$section = $titan->createThemeCustomizerSection( array(
-		'panel' => __( 'Hamburger Menu', 'hamburgermenu' ),
-	    'name' => __( 'Social Icons', 'hamburgermenu' ),
-		'desc' => __( 'Display your social links as icons that appear on the bottom of your hamburger menu. Enter your social links in the fields below.', 'hamburgermenu' ),
+		'panel' => __( 'Hamburger Menu', GAMBIT_HAMBURGER_PLUGIN ),
+	    'name' => __( 'Social Icons', GAMBIT_HAMBURGER_PLUGIN ),
+		'desc' => __( 'Display your social links as icons that appear on the bottom of your hamburger menu. Enter your social links in the fields below.', GAMBIT_HAMBURGER_PLUGIN ),
 	) );
-	
-	if ( ! apply_filters( 'hamburger_social_links_options', false, $section ) ) {
-		$section->createOption( array(
-			'id' => 'social_dummy',
-			'hidden' => true,
-			'type' => 'note',
-			'desc' => __( 'This feature is only available in the PRO version', 'hamburgermenu' ) . '<br><a href="' . HAMBURGER_STORE_URL . '" class="button button-primary" target="_blank" style="margin-top: 5px">' . __( 'Go PRO now to enable social icons', 'hamburgermenu' ) . '</a>',
-			'default' => '',
-		) );
-	}
 	
 }

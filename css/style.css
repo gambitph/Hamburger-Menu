@@ -536,6 +536,58 @@ html.hamburger-right.hamburger_fixed #hamburger-content-wrapper {
   transform: translateX(calc(-100% + 10px));
   opacity: 1; }
 
+#hamburger-menu-container.highlight-effect-grow-left #hamburger-menu li a:before, #hamburger-menu-container.highlight-effect-grow-left #hamburger-menu li a:link:before, #hamburger-menu-container.highlight-effect-grow-left #hamburger-menu li a:visited:before {
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  opacity: 1; }
+#hamburger-menu-container.highlight-effect-grow-left #hamburger-menu li a:hover:before, #hamburger-menu-container.highlight-effect-grow-left #hamburger-menu li a:link:hover:before, #hamburger-menu-container.highlight-effect-grow-left #hamburger-menu li a:visited:hover:before {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1; }
+
+#hamburger-menu-container.highlight-effect-grow-right #hamburger-menu li a:before, #hamburger-menu-container.highlight-effect-grow-right #hamburger-menu li a:link:before, #hamburger-menu-container.highlight-effect-grow-right #hamburger-menu li a:visited:before {
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  opacity: 1; }
+#hamburger-menu-container.highlight-effect-grow-right #hamburger-menu li a:hover:before, #hamburger-menu-container.highlight-effect-grow-right #hamburger-menu li a:link:hover:before, #hamburger-menu-container.highlight-effect-grow-right #hamburger-menu li a:visited:hover:before {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1; }
+
+#hamburger-menu-container.highlight-effect-grow-top #hamburger-menu li a:before, #hamburger-menu-container.highlight-effect-grow-top #hamburger-menu li a:link:before, #hamburger-menu-container.highlight-effect-grow-top #hamburger-menu li a:visited:before {
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  opacity: 1; }
+#hamburger-menu-container.highlight-effect-grow-top #hamburger-menu li a:hover:before, #hamburger-menu-container.highlight-effect-grow-top #hamburger-menu li a:link:hover:before, #hamburger-menu-container.highlight-effect-grow-top #hamburger-menu li a:visited:hover:before {
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1; }
+
+#hamburger-menu-container.highlight-effect-grow-bottom #hamburger-menu li a:before, #hamburger-menu-container.highlight-effect-grow-bottom #hamburger-menu li a:link:before, #hamburger-menu-container.highlight-effect-grow-bottom #hamburger-menu li a:visited:before {
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+  opacity: 1; }
+#hamburger-menu-container.highlight-effect-grow-bottom #hamburger-menu li a:hover:before, #hamburger-menu-container.highlight-effect-grow-bottom #hamburger-menu li a:link:hover:before, #hamburger-menu-container.highlight-effect-grow-bottom #hamburger-menu li a:visited:hover:before {
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1; }
+
 #hamburger-menu-container.highlight-grow #hamburger-menu li a:hover, #hamburger-menu-container.highlight-grow #hamburger-menu li a:link:hover, #hamburger-menu-container.highlight-grow #hamburger-menu li a:visited:hover {
   padding-top: 30px;
   padding-bottom: 30px; }
