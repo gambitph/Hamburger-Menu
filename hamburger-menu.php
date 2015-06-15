@@ -44,15 +44,28 @@ if ( ! class_exists('GambitHamburgerMenu') ) {
 	
 		function __construct() {
 
-			// Activation instructions & CodeCanyon rating notices
-			require_once( 'class-rate-notice.php' );
-			if ( class_exists( 'GambitRateNotice' ) ) {
-				new GambitRateNotice( array(
-					'file' => __FILE__,
-					'class' => __CLASS__,
+			// Plugin automatic updates
+			require_once( 'class-admin-license.php' );
+			add_filter( 'gambit_plugin_updater', function( $plugins ) {
+				$plugins[] = array(
+					'sku' => 'HAMBURGER', // Should be the same in our site
+			   	  	'store_url' => 'http://www.gambit.ph', // Our main site URL
+			   	  	'name' => 'Hamburger Menu by Gambit', // Should be the same with our site
+			   	  	'url' => 'http://www.gambit.ph/downloads/hamburger-menu-by-gambit/',
+			   	  	'file' => __FILE__,
+			   	  	'version' => HAMBURGER_VERSION, // The version of this current plugin
+			   	  	'author' => 'Gambit Technologies Inc.',
+				);
+				return $plugins;
+			} );
 
-					// Displays simple usage instructions.
-					'help_message' => __( 'The Hamburger Menu replaces your regular menu with a sleek touch-ready menu. It is easily configurable like a regular menu and is sure to wow visitors without the need to learn something new.', GAMBIT_HAMBURGER_PLUGIN ),
+			// Admin pointer reminders for automatic updates
+			require_once( 'class-admin-pointers.php' );
+			if ( class_exists( 'GambitAdminPointers' ) ) {
+				new GambitAdminPointers( array (
+					'pointer_name' => 'gambithamburger', // This should also be placed in uninstall.php
+					'header' => __( 'Automatic Updates', GAMBIT_HAMBURGER_PLUGIN ),
+					'body' => __( 'Keep your Hamburger Menu by Gambit plugin updated by entering your purchase code here.', GAMBIT_HAMBURGER_PLUGIN ),
 				) );
 			}
 			
