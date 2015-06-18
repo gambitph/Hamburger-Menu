@@ -405,7 +405,7 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 										<i class="dashicons dashicons-no" style="display: none"></i>
 										<i class="dashicons dashicons-yes" <?php echo ! empty( $licenseEDDKey ) ? '' : 'style="display: none"' ?>></i>
 										<input type="hidden" name="sku" value="<?php echo esc_attr( $plugin['sku'] ) ?>"/>
-										<input id="license_key_<?php echo esc_attr( $plugin['sku'] ) ?>" name="license_key_<?php echo esc_attr( $plugin['sku'] ) ?>" type="text" class="regular-text" value="<?php echo esc_attr( $purchaseCode ) ?>" placeholder="<?php echo esc_attr( __( 'Purcahse Code', 'default' ) ) ?>"/>
+										<input id="license_key_<?php echo esc_attr( $plugin['sku'] ) ?>" name="license_key_<?php echo esc_attr( $plugin['sku'] ) ?>" type="text" class="regular-text" value="<?php echo esc_attr( $purchaseCode ) ?>" placeholder="<?php echo esc_attr( __( 'Purchase Code', 'default' ) ) ?>"/>
 										<button class="button-secondary edd_license_activate" <?php echo ! empty( $licenseEDDKey ) ? 'style="display: none"' : '' ?>><?php _e( 'Save & Activate Automatic Updates', 'default' ) ?></button>
 									</td>
 									<?php if ( count( $faqs ) ) : ?>
