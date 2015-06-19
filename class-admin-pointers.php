@@ -66,8 +66,10 @@ if ( ! class_exists('GambitAdminPointers') ) {
 			<script type="text/javascript">
 				( function($) {
 					var $a = $('#menu-plugins');
-					if ( $('a[href="plugins.php?page=gambit_plugins"]').offset().top > 0 ) {
-						$a = $('a[href="plugins.php?page=gambit_plugins"]');
+					if ( $('a[href="plugins.php?page=gambit_plugins"]').length > 0 ) {
+						if ( $('a[href="plugins.php?page=gambit_plugins"]').offset().top > 0 ) {
+							$a = $('a[href="plugins.php?page=gambit_plugins"]');
+						}
 					}
 					$a.pointer( {
 						content: '<?php echo $adminPointer['content'] ?>',
