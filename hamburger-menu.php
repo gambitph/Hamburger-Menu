@@ -1,14 +1,15 @@
 <?php
-/**
-* Plugin Name: Hamburger Menu by Gambit
-* Plugin URI: http://codecanyon.net/user/gambittech/portfolio
-* Description: A mobile hamburger menu that displays a cool side menu. This can serve as a replacement menu for your theme.
-* Version: 1.0
-* Author: Benjamin Intal - Gambit Technologies Inc
-* Author URI: http://gambit.ph
-* License: GPL2
-* Text Domain: hamburger-menu
-* Domain Path: /languages
+/*
+Plugin Name: Hamburger Menu by Gambit
+Plugin URI: http://www.gambit.ph/downloads/hamburger-menu-by-gambit/
+Description: A mobile hamburger menu that displays a cool side menu. This can serve as a replacement menu for your theme.
+Version: 1.0
+Author: Benjamin Intal - Gambit Technologies Inc
+Author URI: http://gambit.ph
+License: GPL2
+Text Domain: hamburger-menu
+Domain Path: /languages
+SKU: HAMBURGER
 */
 
 // Exit if accessed directly
@@ -25,6 +26,7 @@ defined( 'HAMBURGER_URL' ) or define( 'HAMBURGER_URL', plugin_dir_url( __FILE__ 
 defined( 'HAMBURGER_FILE' ) or define( 'HAMBURGER_FILE', __FILE__ );
 defined( 'HAMBURGER_STORE_URL' ) or define( 'HAMBURGER_STORE_URL', 'http://wphamburgermenu.com' );
 
+require_once( 'class-admin-license.php' );
 require_once( 'titan-options.php' );
 require_once( 'titan-framework-checker.php' );
 
@@ -43,21 +45,6 @@ if ( ! class_exists('GambitHamburgerMenu') ) {
 		);
 	
 		function __construct() {
-
-			// Plugin automatic updates
-			require_once( 'class-admin-license.php' );
-			add_filter( 'gambit_plugin_updater', function( $plugins ) {
-				$plugins[] = array(
-					'sku' => 'HAMBURGER', // Should be the same in our site
-			   	  	'store_url' => 'http://www.gambit.ph', // Our main site URL
-			   	  	'name' => 'Hamburger Menu by Gambit', // Should be the same with our site
-			   	  	'url' => 'http://www.gambit.ph/downloads/hamburger-menu-by-gambit/',
-			   	  	'file' => __FILE__,
-			   	  	'version' => HAMBURGER_VERSION, // The version of this current plugin
-			   	  	'author' => 'Gambit Technologies Inc.',
-				);
-				return $plugins;
-			} );
 
 			// Admin pointer reminders for automatic updates
 			require_once( 'class-admin-pointers.php' );

@@ -11,6 +11,8 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 	
 	class GambitAdminLicensePage {
 
+		// The URL to our EDD store
+		const STORE_URL = 'http://www.gambit.ph';
 		// The URL to a JSON array of all our plugins
 		const PLUGIN_LIST_URL = 'http://www.gambit.ph/wp-admin/admin-ajax.php?action=get_all_plugins';
 		// The URL to a notice to display on top of the activation admin page
@@ -41,6 +43,12 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 			add_action( 'admin_notices', array( $this, 'displaySaleNotice' ) );
 			add_action( 'wp_ajax_gambit_plugin_activate', array( $this, 'savePurchaseCode' ) );
 			add_action( 'admin_init', array( $this, 'checkForUpdates' ), 2 );
+			add_filter( 'extra_plugin_headers', array( $this, 'addSKUHeader' ) );
+		}
+		
+		public function addSKUHeader( $headers ) {
+			$headers[] = 'SKU';
+			return $headers;
 		}
 		
 		
@@ -98,6 +106,34 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 			}
 			
 		}
+		
+		
+		public function gatherInstalledPlugins() {
+			if ( ! empty( $this->installedPlugins ) ) {
+				return $this->installedPlugins;
+			}
+			
+			$allPlugins = get_plugins();
+			foreach ( $allPlugins as $pluginFile => $pluginMeta ) {
+				
+				if ( empty( $pluginMeta['SKU'] ) ) {
+					continue;
+				}
+
+				$this->installedPlugins[] = array(
+					'sku' => $pluginMeta['SKU'], // Should be the same in our site
+			   	  	'store_url' => self::STORE_URL, // Our main site URL
+			   	  	'name' => $pluginMeta['Name'], // Should be the same with our site
+			   	  	'url' => $pluginMeta['PluginURI'],
+			   	  	'file' => $pluginFile,
+			   	  	'version' => $pluginMeta['Version'], // The version of this current plugin
+			   	  	'author' => $pluginMeta['Author'],
+				);
+				
+			}
+			
+			return $this->installedPlugins;
+		}
 
 
 		/**
@@ -106,8 +142,9 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 		 * @return void
 		 */
 		public function createLicensesPage() {
+			$this->gatherInstalledPlugins();
 
-			$this->installedPlugins = apply_filters( 'gambit_plugin_updater', array() );
+			// $this->installedPlugins = apply_filters( 'gambit_plugin_updater', array() );
 			if ( empty( $this->installedPlugins ) ) {
 				return;
 			}
@@ -517,7 +554,8 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 			$code = esc_attr( $_POST['code'] );
 
 			// Verify SKU
-			$this->installedPlugins = apply_filters( 'gambit_plugin_updater', array() );
+			// $this->installedPlugins = apply_filters( 'gambit_plugin_updater', array() );
+			$this->installedPlugins = $this->gatherInstalledPlugins();
 			if ( empty( $this->installedPlugins ) ) {
 				$this->deleteLicenseKey( $sku );
 				die( 'no_plugins' );
@@ -579,7 +617,8 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 		 */
 		public function checkForUpdates() {
 			
-			$this->installedPlugins = apply_filters( 'gambit_plugin_updater', array() );
+			// $this->installedPlugins = apply_filters( 'gambit_plugin_updater', array() );
+			$this->gatherInstalledPlugins();
 			if ( empty( $this->installedPlugins ) ) {
 				return;
 			}
