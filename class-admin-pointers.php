@@ -18,9 +18,12 @@ if ( ! class_exists('GambitAdminPointers') ) {
 			$defaults = array(
 				'pointer_name' => 'gambit',
 				'header' => __( 'Automatic Updates', 'default' ),
-				'body' => __( 'Keep your Gambit plugins updated by entering your purchase code here.', 'default' ),
+				'body' => __( 'Keep your plugin updated by entering your purchase code here.', 'default' ),
 			);
 			$this->settings = array_merge( $defaults, $settings );
+			
+			// Pointers are only allowed to have names in small caps (WP requirement)
+			$this->settings['pointer_name'] = strtolower( $this->settings['pointer_name'] );
 
 			// Initialize admin point headers
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueuePointerScript' ) );
@@ -48,7 +51,7 @@ if ( ! class_exists('GambitAdminPointers') ) {
 			// Only allow a single pointer to exist
 			// If another Gambit pointer has already been displayed, never show ours
 			// so we do not clutter the screen. (this might happen if multiple
-			// Gambit plugins are activated at the same time)
+			// plugins are activated at the same time)
 			if ( self::$pointersActive > 0 ) {
 				$dismissed = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
 				

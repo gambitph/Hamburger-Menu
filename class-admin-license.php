@@ -360,10 +360,36 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 				background-color: #F64747;
 			}
 			#gambit_plugin_activation .other-plugins td {
-				width: 70% !important;
+				width: 20% !important;
 			}
-			#gambit_plugin_activation .other-plugins td:first-child {
+			#gambit_plugin_activation .other-plugins td:nth-child(1),
+			#gambit_plugin_activation .other-plugins td:nth-child(3) {
+				padding-right: 0 !important;
+			}
+			#gambit_plugin_activation .other-plugins td:nth-child(2),
+			#gambit_plugin_activation .other-plugins td:nth-child(4) {
 				width: 30% !important;
+			}
+			#gambit_plugin_activation .other-plugins td .mobile_preview {
+				display: none !important;
+			}
+			#gambit_plugin_activation .other-plugins td:nth-child(2) {
+				border-right: 1px solid #f1f1f1;
+			}
+			#gambit_plugin_activation .other-plugins td *:first-child {
+				margin-top: 0;
+			}
+			@media screen and (max-width: 1100px) {
+				#gambit_plugin_activation .other-plugins td {
+					width: 50% !important;
+				}
+				#gambit_plugin_activation .other-plugins td:nth-child(1),
+				#gambit_plugin_activation .other-plugins td:nth-child(3) {
+					display: none !important;
+				}
+				#gambit_plugin_activation .other-plugins td .mobile_preview {
+					display: block !important;
+				}
 			}
 			#gambit_plugin_activation .other-plugins img {
 				width: 100%;
@@ -464,14 +490,20 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 						<table class="form-table other-plugins">
 							<thead>
 								<tr>
-									<th colspan="2"><?php _e( 'Other Gambit Plugins That You Might Find Useful', 'default' ) ?></th>
+									<th colspan="4"><?php _e( 'Other Gambit Plugins That You Might Find Useful', 'default' ) ?></th>
 								</tr>
 							</thead>
 						
 							<tbody>
 
-								<?php foreach ( $remotePlugins as $plugin ) : ?>
-									<tr valign="top">
+								<?php foreach ( $remotePlugins as $i => $plugin ) : ?>
+									<?php
+									if ( ( $i + 1 ) % 2 == 1 ) :
+									?>
+										<tr valign="top">
+									<?php
+									endif;
+									?>
 										<td>
 											<?php if ( ! empty( $plugin->demo ) ) : ?>
 												<a href="<?php echo esc_url( $plugin->demo ) ?>" target="_gambitdemo">
@@ -484,6 +516,15 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 											<?php endif; ?>
 										</td>
 										<td>
+											<?php if ( ! empty( $plugin->demo ) ) : ?>
+												<a href="<?php echo esc_url( $plugin->demo ) ?>" target="_gambitdemo" class="mobile_preview">
+											<?php endif; ?>
+											<?php if ( ! empty( $plugin->image ) ) : ?>
+												<img src="<?php echo esc_url( $plugin->image ) ?>" alt="<?php echo esc_attr( $plugin->name ) ?> Preview Image"  class="mobile_preview"/>
+											<?php endif; ?>
+											<?php if ( ! empty( $plugin->demo ) ) : ?>
+												</a>
+											<?php endif; ?>
 											<h3 id="<?php echo esc_attr( str_replace( ' ', '_', strtolower( $plugin->name ) ) ) ?>"><?php echo esc_attr( $plugin->name ) ?></h3>
 											<p class="plugin-desc"><?php echo wp_kses( $plugin->desc, wp_kses_allowed_html( 'post' ) ) ?></p>
 											<?php if ( ! empty( $plugin->demo ) ) : ?>
@@ -493,7 +534,13 @@ if ( ! class_exists( 'GambitAdminLicensePage' ) ) {
 												<a href="<?php echo esc_url( $plugin->buy ) ?>" class="button-secondary" target="_gambitdemo"><?php _e( 'Learn More', 'default' ) ?></a>
 											<?php endif; ?>
 										</td>
-									</tr>
+									<?php
+									if ( $i % 2 || count( $remotePlugins ) - 1 == $i ) :
+									?>
+										</tr>
+									<?php
+									endif;
+									?>
 								<?php endforeach; ?>
 							</tbody>
 					
